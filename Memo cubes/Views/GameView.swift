@@ -7,16 +7,14 @@ struct GameView: View {
     @StateObject var viewModel: GameViewModel = GameViewModel()
     
     let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-            GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
     
     var body: some View {
         VStack {
-           
             topBar(playerName: "Pavel \(viewModel.playerScore)", oppositeName: "AI")
             LazyVGrid(columns: columns, spacing: 5) {
                 ForEach(viewModel.cubes) { cube in
@@ -29,7 +27,9 @@ struct GameView: View {
                     .opacity(viewModel.disabled.contains(cube.id) ? 0.7 : 1)
                     .onTapGesture {
                         withAnimation(.linear(duration: 0.5)) {
-                            viewModel.onTapCube(cube: cube)
+                            if !viewModel.opened.contains(cube.id) {
+                                viewModel.onTapCube(cube: cube)
+                            }
                         }
                     }
                 }

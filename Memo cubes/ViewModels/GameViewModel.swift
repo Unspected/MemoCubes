@@ -18,7 +18,11 @@ protocol CubesServiceProtocol {
 
 final class GameViewModel: ObservableObject, CubesServiceProtocol {
    
-    private let cubeImages: [String] = ["magic-carpet", "swords", "camel", "camel-shape"]
+    private let cubeImages: [String] = ["magic-carpet", "swords", "camel",
+                                        "camel-shape", "cactus", "castle",
+                                        "genie_lamp", "oil_fabric", "papyrus",
+                                        "scorpion", "magic_lamp", "sarcophagus",
+                                        "scarab_bug", "snake"]
     
     @Published var playerScore: Int = 0
     @Published var winPoints: Int = 0
