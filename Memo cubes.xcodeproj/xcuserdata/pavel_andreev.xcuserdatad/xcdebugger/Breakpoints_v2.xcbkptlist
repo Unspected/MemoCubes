@@ -15,8 +15,8 @@
             filePath = "Memo cubes/ViewModels/GameViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "checkSelectedCubesSubscription()"
             landmarkType = "7">
             <Actions>
@@ -38,23 +38,29 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8B3B2A10-416D-4634-BD8C-C63CB790C05A"
+            uuid = "5BBE1472-C6D3-4C60-8792-3C9033034B2F"
             shouldBeEnabled = "Yes"
-            nameForDebugger = "showSelectedCubes"
+            nameForDebugger = "StatusOpenedCubes"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
-            filePath = "Memo cubes/Components/Cube.swift"
+            filePath = "Memo cubes/ViewModels/GameViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "GameViewModel"
+            landmarkType = "3">
             <Actions>
                <BreakpointActionProxy
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
                   <ActionContent
-                     consoleCommand = "po selectedCubes">
+                     consoleCommand = "po cubes.filter { $0.isShow == true}">
+                  </ActionContent>
+               </BreakpointActionProxy>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po cubes + &quot;cubes list&quot;">
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>
@@ -63,33 +69,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B4270E58-4C74-4C3A-8CC1-BD4C7202A6DC"
+            uuid = "E3AE7E94-C020-48FD-B1C1-29835850ED0B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Memo cubes/ViewModels/GameViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "cubesMatchingSubscription()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E68DBF8A-7B35-4AAC-9A22-8FB09D176330"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Memo cubes/ViewModels/GameViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "hideAllOpenedCubes()"
-            landmarkType = "7">
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "GameViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

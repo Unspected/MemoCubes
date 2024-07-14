@@ -3,8 +3,6 @@ import SwiftUI
 struct Cube: View {
     
     @Binding var model: CubeModel
-    @Binding var stepCount: Int
-    @Binding var selectedCubes: [CubeModel]
     
     var body: some View {
         VStack {
@@ -39,25 +37,12 @@ struct Cube: View {
                 }
             }
             .frame(width: 70, height: 70)
-            .onTapGesture {
-                withAnimation(.linear(duration: 0.5)) {
-                    if !model.isDisabled {
-                        selectedCubes.append(model)
-                        model.isShow.toggle()
-                        self.stepCount += 1
-                    }
-                }
-                
-            }
         }
     }
-
 }
 
 #Preview {
-    Cube(model: .constant(CubeModel(imageName: "swords")),
-         stepCount: .constant(0),
-         selectedCubes: .constant([]))
+    Cube(model: .constant(CubeModel(imageName: "swords")))
     
 }
 

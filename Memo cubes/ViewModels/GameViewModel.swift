@@ -18,6 +18,7 @@ struct CubeModel: Identifiable, Equatable {
 protocol CubesServiceProtocol {
     func fetchCubes()
     func checkSelectedCubes() -> Bool
+    func onTapCube(cube: inout CubeModel)
     
 }
 
@@ -36,8 +37,13 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
     init() {
       checkSelectedCubesSubscription()
       cubesMatchingSubscription()
-  //    observersSelectedValue()
         
+    }
+    
+    func onTapCube(cube: inout CubeModel) {
+        cube.isShow.toggle()
+        selectedCubes.append(cube)
+        stepCount += 1
     }
     
     // MARK: - обработка результата
@@ -53,10 +59,12 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
                     if result {
                         print("right answer")
                         self.matchedCubesDisabled()
+                        print("all elements where is show: \(self.cubes.filter { $0.isShow == true})")
+                        print("весь массив \(self.cubes)")
                         self.selectedCubes.removeAll()
 
                     } else {
-                        print("not match")
+                        print("wrong")
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                             guard let self else { return }
                             self.hideOpenedCubes(selectedCubes: &self.selectedCubes, cubes: &self.cubes)
@@ -75,8 +83,8 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
             .sink(receiveValue: { [weak self] step in
                 guard let self else { return }
                 if step % 2 == 0 && step > 1 {
-                    let resultMatching = checkSelectedCubes() // Результат передаем сюда true or false
-                    self.cubesIsMatched.send(resultMatching)
+                    // Результат передаем сюда true or false
+                    self.cubesIsMatched.send(checkSelectedCubes())
                 }
             })
             .store(in: &cancellable)
@@ -97,11 +105,6 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
         return selectedCubes[0].imageName == selectedCubes[1].imageName
     }
     
-    func resetSelectedCubes() {
-        self.selectedCubes = []
-        print("RESET SELECTED VALUES is \(selectedCubes.count)")
-    }
-    
     // Сделать Disabled cubes который совпали и оставить их открытыми
     func matchedCubesDisabled() {
         for i in 0..<selectedCubes.count {
@@ -113,16 +116,6 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
     }
     
     // MARK: - Закрыть кубики которые были открыты
-    func hideAllOpenedCubes() {
-        print("Выбранные значения \(selectedCubes)")
-        
-        for cube in selectedCubes {
-            if let index = cubes.firstIndex(of: cube) {
-                cubes[index].isShow = false
-            }
-        }
-    }
-    
     func hideOpenedCubes(selectedCubes: inout [CubeModel], cubes: inout [CubeModel]) {
         for i in 0..<selectedCubes.count {
             for j in 0..<cubes.count {

@@ -20,12 +20,15 @@ struct GameView: View {
                 .font(.title)
             topBar(playerName: "Pavel", oppositeName: "Ai")
             LazyVGrid(columns: columns, spacing: 5) {
-                ForEach($viewModel.cubes) { $cube in
-                    Cube(model: $cube,
-                         stepCount: $viewModel.stepCount,
-                         selectedCubes: $viewModel.selectedCubes)
+                ForEach($viewModel.cubes, id: \.id) { $model in
+                    Cube(model: $model)
+                        .onTapGesture {
+                            withAnimation(.linear(duration: 0.5)) {
+                                viewModel.onTapCube(cube: &model)
+                            }
+                        }
                 }
-            }
+              }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
@@ -38,13 +41,6 @@ struct GameView: View {
             viewModel.fetchCubes()
             
         }
-//        .onReceive(viewModel.$stepCount, perform: { step in
-//            print("выбрано купибиков \(viewModel.selectedCubes.count)")
-//            if step == 2 {
-//                viewModel.resetSteps()
-//                viewModel.checkSelectedCubes() ? print("true") : viewModel.hideAllOpenedCubes()
-//            }
-//        })
     }
     
     @ViewBuilder
