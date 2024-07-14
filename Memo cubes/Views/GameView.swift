@@ -36,6 +36,7 @@ struct GameView: View {
         )
         .task(priority: .high) {
             viewModel.fetchCubes()
+            
         }
 //        .onReceive(viewModel.$stepCount, perform: { step in
 //            print("выбрано купибиков \(viewModel.selectedCubes.count)")

@@ -2,14 +2,16 @@ import Foundation
 import Combine
 
 struct CubeModel: Identifiable, Equatable {
-    let id: UUID = UUID()
+    let id: UUID
     let imageName: String
     var isShow: Bool = false
     var isDisabled: Bool = false
     
-    // Conform to Equatable to compare models based on properties
-    static func == (lhs: CubeModel, rhs: CubeModel) -> Bool {
-        return lhs.imageName == rhs.imageName
+    init(imageName: String, isShow: Bool = true, isDisabled: Bool = false) {
+           self.id = UUID()
+           self.imageName = imageName
+           self.isShow = isShow
+           self.isDisabled = isDisabled
     }
 }
 
@@ -34,20 +36,14 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
     init() {
       checkSelectedCubesSubscription()
       cubesMatchingSubscription()
-      observersSelectedValue()
-    }
-    
-    func observersSelectedValue() {
-        $selectedCubes
-            .map { $0 }
-            .sink(receiveValue:  { [weak self] value in
-            print(value)
-        }).store(in: &cancellable)
+  //    observersSelectedValue()
+        
     }
     
     // MARK: - обработка результата
     func cubesMatchingSubscription() {
         cubesIsMatched
+            .receive(on: DispatchQueue.main)
             .sink(
                 receiveValue: { [weak self] result in
                     guard let self else { return }
@@ -61,8 +57,9 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
 
                     } else {
                         print("not match")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.hideAllOpenedCubes()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                            guard let self else { return }
+                            self.hideOpenedCubes(selectedCubes: &self.selectedCubes, cubes: &self.cubes)
                             self.selectedCubes.removeAll()
                         }
                         
@@ -113,14 +110,26 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
                 
             }
         }
-        resetSelectedCubes()
     }
     
     // MARK: - Закрыть кубики которые были открыты
     func hideAllOpenedCubes() {
+        print("Выбранные значения \(selectedCubes)")
+        
         for cube in selectedCubes {
             if let index = cubes.firstIndex(of: cube) {
                 cubes[index].isShow = false
+            }
+        }
+    }
+    
+    func hideOpenedCubes(selectedCubes: inout [CubeModel], cubes: inout [CubeModel]) {
+        for i in 0..<selectedCubes.count {
+            for j in 0..<cubes.count {
+                if selectedCubes[i].imageName == cubes[j].imageName {
+                    selectedCubes[i].isShow = false
+                    cubes[j].isShow = false
+                }
             }
         }
     }

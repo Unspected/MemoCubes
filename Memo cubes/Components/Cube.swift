@@ -41,15 +41,16 @@ struct Cube: View {
             .frame(width: 70, height: 70)
             .onTapGesture {
                 withAnimation(.linear(duration: 0.5)) {
-                    selectedCubes.append(model)
-                    model.isShow.toggle()
-                    self.stepCount += 1
+                    if !model.isDisabled {
+                        selectedCubes.append(model)
+                        model.isShow.toggle()
+                        self.stepCount += 1
+                    }
                 }
                 
             }
         }
     }
-    
 
 }
 
