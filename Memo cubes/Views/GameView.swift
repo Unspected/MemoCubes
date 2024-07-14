@@ -10,25 +10,31 @@ struct GameView: View {
             GridItem(.flexible()),
             GridItem(.flexible()),
             GridItem(.flexible()),
-            GridItem(.flexible())
+            GridItem(.flexible()),
+            GridItem(.flexible()),
     ]
     
     var body: some View {
         VStack {
-            Text("\(viewModel.winPoints)")
-                .foregroundStyle(.white)
-                .font(.title)
-            topBar(playerName: "Pavel", oppositeName: "Ai")
+           
+            topBar(playerName: "Pavel \(viewModel.playerScore)", oppositeName: "AI")
             LazyVGrid(columns: columns, spacing: 5) {
-                ForEach($viewModel.cubes, id: \.id) { $model in
-                    Cube(model: $model)
-                        .onTapGesture {
-                            withAnimation(.linear(duration: 0.5)) {
-                                viewModel.onTapCube(cube: &model)
-                            }
+                ForEach(viewModel.cubes) { cube in
+                    Cube(
+                        viewState: .init(
+                            imageName: cube.imageName,
+                            isOpened: viewModel.opened.contains(cube.id)
+                        )
+                    )
+                    .opacity(viewModel.disabled.contains(cube.id) ? 0.7 : 1)
+                    .onTapGesture {
+                        withAnimation(.linear(duration: 0.5)) {
+                            viewModel.onTapCube(cube: cube)
                         }
+                    }
                 }
-              }
+            }
+            .padding(10)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
@@ -37,10 +43,6 @@ struct GameView: View {
                 .scaledToFill()
                 .ignoresSafeArea(.all)
         )
-        .task(priority: .high) {
-            viewModel.fetchCubes()
-            
-        }
     }
     
     @ViewBuilder
@@ -55,7 +57,6 @@ struct GameView: View {
                 .padding(.trailing, 10)
         }
         .padding()
-        .border(Color.white)
     }
     
     @ViewBuilder

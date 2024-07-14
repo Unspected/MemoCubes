@@ -2,69 +2,54 @@ import SwiftUI
 
 struct Cube: View {
     
-    @Binding var model: CubeModel
+    struct ViewState {
+        let imageName: String
+        let isOpened: Bool
+    }
+    
+    let viewState: ViewState
     
     var body: some View {
-        VStack {
-            ZStack {
-                if model.isDisabled {
-                    RoundedRectangle(cornerRadius: 10.0)
-                        .fill(.naturalWood)
-                        .transition(.reverseFlip)
-                        .overlay {
-                            Image(model.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 50, height: 50)
-                    }
-                }
-                else {
-                    if model.isShow {
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .fill(.naturalWood)
-                            .transition(.reverseFlip)
-                            .overlay {
-                                Image(model.imageName)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 50, height: 50)
-                            }
-                    } else {
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .fill(.naturalWood)
-                            .transition(.flip)
-                    }
-                }
+        Color.naturalWood
+            .overlay {
+                Image(viewState.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .padding(10)
+                    .opacity(viewState.isOpened ? 1 : 0)
+                    .rotation3DEffect(Angle.degrees(viewState.isOpened ? 180 : 360), axis: (0,1,0))
             }
-            .frame(width: 70, height: 70)
+            .aspectRatio(1, contentMode: .fit)
+            .clipShape(.rect(cornerRadius: 10))
+            .animation(.easeInOut, value: viewState.isOpened)
+    }
+}
+
+#if DEBUG
+
+struct Cube_Preview: View {
+    
+    @State
+    private var isOpened: Bool = false
+    
+    var body: some View {
+        Cube(
+            viewState: .init(
+                imageName: "swords",
+                isOpened: isOpened
+            )
+        )
+        .frame(width: 70, height: 70)
+        .onTapGesture {
+            isOpened.toggle()
         }
     }
 }
 
+#endif
+
 #Preview {
-    Cube(model: .constant(CubeModel(imageName: "swords")))
-    
-}
-
-
-struct FlipTransition: ViewModifier {
-    var progress: CGFloat = 0
-    
-    func body(content: Content) -> some View {
-        content
-            .rotation3DEffect(
-                .init(degrees: progress * 180),
-                    axis: (x: 0.0, y: 1.0, z: 0.0)
-            )
+    VStack {
+        Cube_Preview()
     }
-}
-
-extension AnyTransition {
-    static let flip: AnyTransition = .modifier(
-        active: FlipTransition(progress: 1),
-        identity: FlipTransition())
-    
-    static let reverseFlip: AnyTransition = .modifier(
-        active: FlipTransition(progress: -1),
-        identity: FlipTransition())
 }
