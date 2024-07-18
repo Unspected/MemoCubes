@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD2473902C464A5100FF925A /* Alladhina-font.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD24738F2C464A5100FF925A /* Alladhina-font.otf */; };
+		DD2473922C464A7C00FF925A /* BulanRamadhan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473912C464A7C00FF925A /* BulanRamadhan.ttf */; };
+		DD2473942C464AA200FF925A /* Persian.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473932C464AA200FF925A /* Persian.otf */; };
+		DD2473962C464ABB00FF925A /* Ramadhankarim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */; };
+		DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */; };
 		DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */; };
 		DD49BEE92C3F2DF80071E9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */; };
 		DD49BEEC2C3F2DF80071E9C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEEB2C3F2DF80071E9C4 /* Preview Assets.xcassets */; };
@@ -16,10 +21,15 @@
 		DD49BEFC2C3F415B0071E9C4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEFB2C3F415B0071E9C4 /* GameView.swift */; };
 		DD82F1822C403513001EAB04 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1812C403513001EAB04 /* Cube.swift */; };
 		DD82F1852C404BD9001EAB04 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1842C404BD9001EAB04 /* GameViewModel.swift */; };
-		DDD8B1952C42ED3C00A4E887 /* SandBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8B1942C42ED3C00A4E887 /* SandBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD24738F2C464A5100FF925A /* Alladhina-font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alladhina-font.otf"; sourceTree = "<group>"; };
+		DD2473912C464A7C00FF925A /* BulanRamadhan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BulanRamadhan.ttf; sourceTree = "<group>"; };
+		DD2473932C464AA200FF925A /* Persian.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Persian.otf; sourceTree = "<group>"; };
+		DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramadhankarim.ttf; sourceTree = "<group>"; };
+		DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Memo-cubes-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontsExtension.swift; sourceTree = "<group>"; };
 		DD49BEE12C3F2DF70071E9C4 /* Memo cubes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memo cubes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo_cubesApp.swift; sourceTree = "<group>"; };
 		DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,7 +40,6 @@
 		DD49BEFB2C3F415B0071E9C4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DD82F1812C403513001EAB04 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		DD82F1842C404BD9001EAB04 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		DDD8B1942C42ED3C00A4E887 /* SandBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +53,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD24738C2C46465300FF925A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */,
+				DD2473932C464AA200FF925A /* Persian.otf */,
+				DD24738F2C464A5100FF925A /* Alladhina-font.otf */,
+				DD2473912C464A7C00FF925A /* BulanRamadhan.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DD2473982C464C8D00FF925A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DD49BED82C3F2DF70071E9C4 = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +91,9 @@
 		DD49BEE32C3F2DF70071E9C4 /* Memo cubes */ = {
 			isa = PBXGroup;
 			children = (
-				DDD8B1932C42ED2F00A4E887 /* SandBox */,
+				DD2473982C464C8D00FF925A /* Extensions */,
+				DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */,
+				DD24738C2C46465300FF925A /* Fonts */,
 				DD82F1832C404BCA001EAB04 /* ViewModels */,
 				DD49BEF82C3F2E830071E9C4 /* Views */,
 				DD49BEF72C3F2E7A0071E9C4 /* Components */,
@@ -107,14 +137,6 @@
 				DD82F1842C404BD9001EAB04 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		DDD8B1932C42ED2F00A4E887 /* SandBox */ = {
-			isa = PBXGroup;
-			children = (
-				DDD8B1942C42ED3C00A4E887 /* SandBox.swift */,
-			);
-			path = SandBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD49BEEC2C3F2DF80071E9C4 /* Preview Assets.xcassets in Resources */,
+				DD2473902C464A5100FF925A /* Alladhina-font.otf in Resources */,
 				DD49BEE92C3F2DF80071E9C4 /* Assets.xcassets in Resources */,
+				DD2473922C464A7C00FF925A /* BulanRamadhan.ttf in Resources */,
+				DD2473942C464AA200FF925A /* Persian.otf in Resources */,
+				DD2473962C464ABB00FF925A /* Ramadhankarim.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,10 +217,10 @@
 				DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */,
 				DD82F1822C403513001EAB04 /* Cube.swift in Sources */,
 				DD49BEF12C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld in Sources */,
+				DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */,
 				DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */,
 				DD49BEFC2C3F415B0071E9C4 /* GameView.swift in Sources */,
 				DD82F1852C404BD9001EAB04 /* GameViewModel.swift in Sources */,
-				DDD8B1952C42ED3C00A4E887 /* SandBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +357,7 @@
 				DEVELOPMENT_TEAM = ZW3N55LCY7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Memo-cubes-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -360,6 +387,7 @@
 				DEVELOPMENT_TEAM = ZW3N55LCY7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Memo-cubes-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

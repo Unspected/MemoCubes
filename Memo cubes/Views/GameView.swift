@@ -15,15 +15,17 @@ struct GameView: View {
     
     var body: some View {
         VStack {
-            topBar(playerName: "Pavel \(viewModel.playerScore)", oppositeName: "AI")
+            topBar(playerName: "Pavel \(viewModel.playerScore)", oppositeName: "Opponent \(viewModel.opponentScore)")
             LazyVGrid(columns: columns, spacing: 5) {
                 ForEach(viewModel.cubes) { cube in
                     Cube(
                         viewState: .init(
                             imageName: cube.imageName,
-                            isOpened: viewModel.opened.contains(cube.id)
+                            isOpened: viewModel.opened.contains(cube.id),
+                            isDisabled: viewModel.touchesDisabled
                         )
                     )
+                  //  .disabled(viewModel.touchesDisabled)
                     .opacity(viewModel.disabled.contains(cube.id) ? 0.7 : 1)
                     .onTapGesture {
                         withAnimation(.linear(duration: 0.5)) {

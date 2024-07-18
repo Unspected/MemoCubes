@@ -6,6 +6,7 @@ struct Cube: View {
     struct ViewState {
         let imageName: String
         let isOpened: Bool
+        let isDisabled: Bool
     }
     
     let viewState: ViewState
@@ -21,6 +22,7 @@ struct Cube: View {
                     .opacity(viewState.isOpened ? 1 : 0)
                     .rotation3DEffect(Angle.degrees(viewState.isOpened ? 180 : 360), axis: (0,1,0))
             }
+            .disabled(viewState.isDisabled)
             .frame(minWidth: 80, maxWidth: .infinity)
             .frame(minHeight: screenHeight / 9, maxHeight: .infinity)
             .rotation3DEffect(Angle.degrees(viewState.isOpened ? 180 : 360), axis: (0,1,0))
@@ -32,12 +34,14 @@ struct Cube: View {
 
 struct Cube_Preview: View {
     @State private var isOpened: Bool = false
+    @State private var isDisable: Bool = false
     
     var body: some View {
         Cube(
             viewState: .init(
                 imageName: "swords",
-                isOpened: isOpened
+                isOpened: isOpened,
+                isDisabled: isDisable
             )
         )
         .frame(width: 70, height: 70)
