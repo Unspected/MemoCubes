@@ -11,17 +11,19 @@ struct CubeModel: Identifiable, Equatable {
     }
 }
 
-enum TurnMakeMove {
-    case player
-    case opponent
-}
-
 @MainActor
 protocol CubesServiceProtocol {
     func onTapCube(cube: CubeModel)
+    func matchingCubes(cubes: [CubeModel]) -> Bool
 }
 
-final class GameViewModel: ObservableObject, CubesServiceProtocol {
+@MainActor
+protocol OpponentServiceProtocol {
+    func perfectMatchCubesAI()
+    func openRandomCubesAI()
+}
+
+final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServiceProtocol {
    
     private let cubeImages: [String] = ["magic-carpet", "swords", "camel",
                                         "camel-shape", "cactus", "castle",
@@ -31,7 +33,6 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
     // TODO
     // @Published var gameDifficulty: Int = 0 where is 0 it's hard and 4 easy
     @Published var opponentScore: Int = 0
-//    @Published var selectedOpponentCubes: [CubeModel] = []
     @Published var playerScore: Int = 0
     @Published var winPoints: Int = 0
     @Published var selectedCubes: [CubeModel] = []
@@ -43,9 +44,12 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
     
     @Published
     private(set) var disabled: Set<CubeModel.ID> = []
-
-    private var opponentStepCount: Int = 0
     @Published var touchesDisabled: Bool = false
+    @Published var blockAllField: Bool = false
+    
+    let playerName: String = "Pavel"
+    let opponentName: String = "PC"
+    private var stepsCount: Int = 0
     
     init() {
         shuffleGame()
@@ -74,21 +78,16 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
         guard selectedCubes.count == 2 else {
             return
         }
-        opponentStepCount += 1
+        stepsCount += 1
         if matchingCubes(cubes: selectedCubes) {
             playerScore += 1
             selectedCubes.forEach { cube in
                     disabled.insert(cube.id)
                 }
             selectedCubes.removeAll()
-            
-            performWithDelay {
-                actionMoveOpponent()
-            }
-            
-//            performWithDelay {
-//                checkIfWon()
-//            }
+        
+            actionMoveOpponent()
+
         } else {
             touchesDisabled = true
             performWithDelay {
@@ -97,7 +96,9 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
                 }
                 selectedCubes.removeAll()
             }
+            
             actionMoveOpponent()
+            
         }
     }
     
@@ -110,19 +111,31 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
     }
     
     // add delay to keep cubes opened
-    private func performWithDelay(seconds: UInt64 = 1, @_implicitSelfCapture _ callback: @escaping () -> Void) {
+    private func performWithDelay(@_implicitSelfCapture _ callback: @escaping () -> Void) {
         touchesDisabled = true
         Task {
-            try await Task.sleep(nanoseconds: NSEC_PER_SEC * seconds)
+            try await Task.sleep(for: .seconds(1))
             callback()
             touchesDisabled = false
+            
+            
+        }
+    }
+    
+    private func performDelay( _ callback: @escaping () -> Void) {
+        touchesDisabled = true
+        Task {
+            DispatchQueue.main.sync {
+                callback()
+                touchesDisabled = false
+            }
         }
     }
     
     // MARK: AI LOGIC WORK
     
     // turn AI found match cubes with 100%
-    private func perfectMatchCubesAI() {
+    func perfectMatchCubesAI() {
         let filteredCubes = cubes.filter { !disabled.contains($0.id) }
         guard let openRandomCube = filteredCubes.randomElement(),
                 !disabled.contains(openRandomCube.id),
@@ -132,61 +145,70 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol {
         }
         
         let foundedPair = cubes.filter { $0.imageName == openRandomCube.imageName }
-        
         performWithDelay {
-            foundedPair.forEach { cube in
-                opened.insert(cube.id)
-                disabled.insert(cube.id)
-            }
-            opponentScore += 1
+        foundedPair.forEach { cube in
+            opened.insert(cube.id)
+            disabled.insert(cube.id)
         }
+        opponentScore += 1
+      }
+        
     }
     
-    private func generateRandomCubes()  {
-        let filteredCubes = cubes.filter { !disabled.contains($0.id) }
-        while selectedCubesOpponent.count != 2 {
-            if let cube = filteredCubes.randomElement(), !disabled.contains(cube.id), !opened.contains(cube.id) {
-                selectedCubesOpponent.append(cube)
-            }
-        }
-        performWithDelay {
-            for cube in selectedCubesOpponent {
-                opened.insert(cube.id)
-            }
-        }
-    }
     
     // MARK: - open random pair of cube and compare them
     func openRandomCubesAI() {
-        generateRandomCubes()
+        let filteredCubes = cubes.filter { !disabled.contains($0.id) }
+        guard let openRandomCube = filteredCubes.randomElement(),
+                let openRandomCube2 = filteredCubes.randomElement(),
+                !disabled.contains(openRandomCube.id),
+                !opened.contains(openRandomCube.id),
+                !disabled.contains(openRandomCube2.id),
+                !opened.contains(openRandomCube2.id),
+              disabled.count >= (disabled.count - 2) else {
+            return
+        }
         
-        if matchingCubes(cubes: selectedCubesOpponent) {
-            for cube in selectedCubesOpponent {
+        let foundedPair = [openRandomCube, openRandomCube2]
+        
+        
+        
+        if matchingCubes(cubes: foundedPair) {
+            performWithDelay {
+                foundedPair.forEach { cube in
+                    opened.insert(cube.id)
                     disabled.insert(cube.id)
+                }
+                opponentScore += 1
             }
-            selectedCubesOpponent.removeAll()
-            opponentScore += 1
+            
         } else {
             performWithDelay {
-                for cube in selectedCubesOpponent {
+                foundedPair.forEach { cube in
+                    opened.insert(cube.id)
+                }
+                
+                foundedPair.forEach { cube in
                     opened.remove(cube.id)
                 }
-                selectedCubesOpponent.removeAll()
             }
         }
+        
     }
     
-    private func matchingCubes(cubes: [CubeModel]) -> Bool {
+    func matchingCubes(cubes: [CubeModel]) -> Bool {
         return cubes[0].imageName == cubes[1].imageName
     }
         
     // MARK: - combine working on AI move
     private func actionMoveOpponent() {
-        if opponentStepCount % 2 == 0 {
+        if stepsCount % 3 == 0 {
             perfectMatchCubesAI()
         } else {
             openRandomCubesAI()
         }
+       
+
     }
 }
 

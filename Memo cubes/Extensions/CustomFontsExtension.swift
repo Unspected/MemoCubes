@@ -28,6 +28,4 @@ extension Font {
     static func arabic(_ type: ArabicFont, _ size: CGFloat) -> Font {
         return .custom(type.value, size: size)
       }
-    
-    
 }

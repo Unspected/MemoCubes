@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD244D542C4CB43300DAC00B /* ScaleOnChangeModifier.swift */; };
 		DD2473902C464A5100FF925A /* Alladhina-font.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD24738F2C464A5100FF925A /* Alladhina-font.otf */; };
 		DD2473922C464A7C00FF925A /* BulanRamadhan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473912C464A7C00FF925A /* BulanRamadhan.ttf */; };
 		DD2473942C464AA200FF925A /* Persian.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473932C464AA200FF925A /* Persian.otf */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD244D542C4CB43300DAC00B /* ScaleOnChangeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleOnChangeModifier.swift; sourceTree = "<group>"; };
 		DD24738F2C464A5100FF925A /* Alladhina-font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alladhina-font.otf"; sourceTree = "<group>"; };
 		DD2473912C464A7C00FF925A /* BulanRamadhan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BulanRamadhan.ttf; sourceTree = "<group>"; };
 		DD2473932C464AA200FF925A /* Persian.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Persian.otf; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD244D532C4CB3FF00DAC00B /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				DD244D542C4CB43300DAC00B /* ScaleOnChangeModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		DD24738C2C46465300FF925A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		DD49BEE32C3F2DF70071E9C4 /* Memo cubes */ = {
 			isa = PBXGroup;
 			children = (
+				DD244D532C4CB3FF00DAC00B /* ViewModifiers */,
 				DD2473982C464C8D00FF925A /* Extensions */,
 				DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */,
 				DD24738C2C46465300FF925A /* Fonts */,
@@ -217,6 +228,7 @@
 				DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */,
 				DD82F1822C403513001EAB04 /* Cube.swift in Sources */,
 				DD49BEF12C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld in Sources */,
+				DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */,
 				DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */,
 				DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */,
 				DD49BEFC2C3F415B0071E9C4 /* GameView.swift in Sources */,

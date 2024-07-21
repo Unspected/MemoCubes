@@ -15,25 +15,33 @@ struct GameView: View {
     
     var body: some View {
         VStack {
-            topBar(playerName: "Pavel \(viewModel.playerScore)", oppositeName: "Opponent \(viewModel.opponentScore)")
-            LazyVGrid(columns: columns, spacing: 5) {
-                ForEach(viewModel.cubes) { cube in
-                    Cube(
-                        viewState: .init(
-                            imageName: cube.imageName,
-                            isOpened: viewModel.opened.contains(cube.id),
-                            isDisabled: viewModel.touchesDisabled
+            exitButton()
+            scoreBoard()
+            ZStack {
+                LazyVGrid(columns: columns, spacing: 5) {
+                    ForEach(viewModel.cubes) { cube in
+                        Cube(
+                            viewState: .init(
+                                imageName: cube.imageName,
+                                isOpened: viewModel.opened.contains(cube.id)
+                            )
                         )
-                    )
-                  //  .disabled(viewModel.touchesDisabled)
-                    .opacity(viewModel.disabled.contains(cube.id) ? 0.7 : 1)
-                    .onTapGesture {
-                        withAnimation(.linear(duration: 0.5)) {
-                            if !viewModel.opened.contains(cube.id) {
-                                viewModel.onTapCube(cube: cube)
+                        .opacity(viewModel.disabled.contains(cube.id) ? 0.7 : 1)
+                        .onTapGesture {
+                            withAnimation(.linear(duration: 0.5)) {
+                                if !viewModel.opened.contains(cube.id) {
+                                    viewModel.onTapCube(cube: cube)
+                                }
                             }
                         }
                     }
+                }
+                if viewModel.touchesDisabled {
+                    Color.black.opacity(0.5)
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                            }
+                            .transition(.opacity)
                 }
             }
             .padding(10)
@@ -45,20 +53,27 @@ struct GameView: View {
                 .scaledToFill()
                 .ignoresSafeArea(.all)
         )
+    
     }
     
     @ViewBuilder
-    private func topBar(playerName: String, oppositeName: String) -> some View {
+    private func scoreBoard() -> some View {
         HStack {
-            Text(playerName)
-                .padding(.leading, 10)
-                .foregroundStyle(Color.white)
+            Text("\(viewModel.playerName)")
+                .fontWeight(.light)
+            Text("\(viewModel.playerScore)")
+                .scaleOnChange(value: $viewModel.playerScore)
                 Spacer()
-            Text(oppositeName)
-                .foregroundStyle(Color.white)
-                .padding(.trailing, 10)
+            Text("\(viewModel.opponentScore)")
+                .scaleOnChange(value: $viewModel.opponentScore)
+            Text(viewModel.opponentName)
+                .fontWeight(.light)
+               
         }
-        .padding()
+        .font(.headline)
+        .foregroundStyle(Color.white)
+        .padding(.trailing, 10)
+        .padding(.leading, 10)
     }
     
     @ViewBuilder
@@ -66,13 +81,12 @@ struct GameView: View {
         Button(action: {
             showingAlert = true
         }, label: {
-            Image(systemName: "xmark")
-                .resizable()
-                .frame(width: 50, height: 50)
-                .foregroundStyle(Color.red)
+            Text("Exit")
+                .font(.arabic(.alladinFont, 30))
+                .foregroundStyle(.white)
         })
         
-        .alert("Important message", isPresented: $showingAlert) {
+        .alert("Do you want to leave the game ?", isPresented: $showingAlert) {
             Button("Yes") {
                 dismiss()
             }
