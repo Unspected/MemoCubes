@@ -1,8 +1,8 @@
-
 import SwiftUI
 
 struct MainMenu: View {
     
+    @EnvironmentObject var test: TestClass
     @State var isShowView: Bool = false
     @State var isAppear = false
     @State var titleText = "Welcome"

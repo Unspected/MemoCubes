@@ -15,7 +15,7 @@ struct Memo_cubesApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            MainMenu()
+            MainMenu().environmentObject(TestClass())
         }
     }
 }

@@ -13,6 +13,7 @@
 		DD2473942C464AA200FF925A /* Persian.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473932C464AA200FF925A /* Persian.otf */; };
 		DD2473962C464ABB00FF925A /* Ramadhankarim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */; };
 		DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */; };
+		DD2C29A22C5092D600E8F3ED /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2C29A12C5092D600E8F3ED /* TestClass.swift */; };
 		DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */; };
 		DD49BEE92C3F2DF80071E9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */; };
 		DD49BEEC2C3F2DF80071E9C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEEB2C3F2DF80071E9C4 /* Preview Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramadhankarim.ttf; sourceTree = "<group>"; };
 		DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Memo-cubes-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontsExtension.swift; sourceTree = "<group>"; };
+		DD2C29A12C5092D600E8F3ED /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		DD49BEE12C3F2DF70071E9C4 /* Memo cubes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memo cubes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo_cubesApp.swift; sourceTree = "<group>"; };
 		DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DD2C29A02C5092C900E8F3ED /* Sandbox */ = {
+			isa = PBXGroup;
+			children = (
+				DD2C29A12C5092D600E8F3ED /* TestClass.swift */,
+			);
+			path = Sandbox;
+			sourceTree = "<group>";
+		};
 		DD49BED82C3F2DF70071E9C4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		DD49BEE32C3F2DF70071E9C4 /* Memo cubes */ = {
 			isa = PBXGroup;
 			children = (
+				DD2C29A02C5092C900E8F3ED /* Sandbox */,
 				DD244D532C4CB3FF00DAC00B /* ViewModifiers */,
 				DD2473982C464C8D00FF925A /* Extensions */,
 				DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */,
@@ -228,6 +239,7 @@
 				DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */,
 				DD82F1822C403513001EAB04 /* Cube.swift in Sources */,
 				DD49BEF12C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld in Sources */,
+				DD2C29A22C5092D600E8F3ED /* TestClass.swift in Sources */,
 				DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */,
 				DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */,
 				DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */,
