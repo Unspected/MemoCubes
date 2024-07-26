@@ -23,6 +23,8 @@
 		DD49BEFC2C3F415B0071E9C4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEFB2C3F415B0071E9C4 /* GameView.swift */; };
 		DD82F1822C403513001EAB04 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1812C403513001EAB04 /* Cube.swift */; };
 		DD82F1852C404BD9001EAB04 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1842C404BD9001EAB04 /* GameViewModel.swift */; };
+		DD885CE42C5304F100986DCE /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD885CE32C5304F100986DCE /* CustomAlertView.swift */; };
+		DDB2C43A2C52C2C9004DFC19 /* MovePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		DD49BEFB2C3F415B0071E9C4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DD82F1812C403513001EAB04 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		DD82F1842C404BD9001EAB04 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		DD885CE32C5304F100986DCE /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePointer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				DD82F1812C403513001EAB04 /* Cube.swift */,
+				DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */,
+				DD885CE32C5304F100986DCE /* CustomAlertView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -241,8 +247,10 @@
 				DD49BEF12C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld in Sources */,
 				DD2C29A22C5092D600E8F3ED /* TestClass.swift in Sources */,
 				DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */,
+				DD885CE42C5304F100986DCE /* CustomAlertView.swift in Sources */,
 				DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */,
 				DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */,
+				DDB2C43A2C52C2C9004DFC19 /* MovePointer.swift in Sources */,
 				DD49BEFC2C3F415B0071E9C4 /* GameView.swift in Sources */,
 				DD82F1852C404BD9001EAB04 /* GameViewModel.swift in Sources */,
 			);

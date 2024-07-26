@@ -6,10 +6,6 @@ class TestClass: ObservableObject {
     init() {
         testAction()
     }
-    
-
-
-    
     func testAction() {
         
     }

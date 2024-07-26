@@ -149,7 +149,7 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         
         let foundedPair = cubes.filter { $0.imageName == openRandomCube.imageName }
         
-        Task(priority: .background) {
+        Task {
              try await foundedMatchCubes(for: foundedPair)
         }
     }
@@ -183,12 +183,12 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         let foundedPair = [openRandomCube, openRandomCube2]
         
         if matchingCubes(cubes: foundedPair) {
-            Task(priority: .background) {
+            Task {
                  try await foundedMatchCubes(for: foundedPair)
             }
             
         } else {
-            Task(priority: .background) {
+            Task {
                 try await delayOpenedAndClose(for: foundedPair)
                
               //  touchesDisabled = false
