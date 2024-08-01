@@ -1,6 +1,20 @@
 import Foundation
 import Combine
 
+actor TaskManager {
+    
+    func performWithDelay(seconds: Int = 1, _ callback: @escaping () -> Void) async {
+       
+        print("\(String(describing: callback)) start")
+        try? await Task.sleep(for:.seconds(seconds))
+        
+        DispatchQueue.main.async {
+            callback()
+        }
+        print("\(String(describing: callback)) finished")
+        }
+}
+
 struct CubeModel: Identifiable, Equatable {
     let id: UUID
     let imageName: String
@@ -15,17 +29,20 @@ struct CubeModel: Identifiable, Equatable {
 protocol CubesServiceProtocol {
     func onTapCube(cube: CubeModel)
     func matchingCubes(cubes: [CubeModel]) -> Bool
-    func foundedMatchCubes(for cubes: [CubeModel]) async throws
+    func foundedMatchCubes(for cubes: [CubeModel]) async
 }
 
 @MainActor
 protocol OpponentServiceProtocol {
-    func perfectMatchCubesAI()
+    func perfectMatchCubesAI() async
     func openRandomCubesAI()
 }
 
+@MainActor
 final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServiceProtocol {
-   
+    
+    private let serialQueue = DispatchQueue(label: "serial.queue")
+    @MainActor private let taskManager = TaskManager()
     private let cubeImages: [String] = ["magic-carpet", "swords", "camel",
                                         "camel-shape", "cactus", "castle",
                                         "genie_lamp", "oil_fabric", "papyrus",
@@ -41,7 +58,7 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
     @Published var cubes: [CubeModel] = []
     
     @Published
-    private(set) var opened: Set<CubeModel.ID> = []
+    private(set)var opened: Set<CubeModel.ID> = []
     
     @Published
     private(set) var disabled: Set<CubeModel.ID> = []
@@ -89,15 +106,15 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                 }
             selectedCubes.removeAll()
             
-            Task {
-                try await performDelay {
+            Task(priority: .high) {
+                await taskManager.performWithDelay {
                     self.actionMoveOpponent()
                 }
             }
             
         } else {
-            Task {
-                try await performDelay {
+            Task(priority: .high) {
+                await taskManager.performWithDelay {
                     self.selectedCubes.forEach { cube in
                         self.opened.remove(cube.id)
                     }
@@ -105,9 +122,9 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                 }
             }
             
-            
-            Task {
-                try await performDelay {
+            Task(priority: .high) {
+                print("Ход противника")
+                await taskManager.performWithDelay {
                     self.actionMoveOpponent()
                 }
             }
@@ -120,18 +137,6 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
             opened.removeAll()
             disabled.removeAll()
             shuffleGame()
-        }
-    }
-    
-    // add delay to keep cubes opened
-    private func performWithDelay(sleepTime: Int = 1, @_implicitSelfCapture _ callback: @escaping () -> Void) {
-        Task {
-            do {
-                try await Task.sleep(for: .seconds(sleepTime))
-                callback()
-            } catch {
-                print("Failed to sleep \(error)")
-            }
         }
     }
     
@@ -148,22 +153,23 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         }
         
         let foundedPair = cubes.filter { $0.imageName == openRandomCube.imageName }
-        
         Task {
-             try await foundedMatchCubes(for: foundedPair)
+           await foundedMatchCubes(for: foundedPair)
         }
+        
     }
     
-    func foundedMatchCubes(for cubes: [CubeModel]) async throws {
-        try await performDelay {
+    func foundedMatchCubes(for cubes: [CubeModel]) async {
+        await taskManager.performWithDelay {
             for cube in cubes {
                 self.opened.insert(cube.id)
                 self.disabled.insert(cube.id)
             }
             self.opponentScore += 1
+            
         }
-        try Task.checkCancellation()
-        touchesDisabled = false
+        self.touchesDisabled = false
+        
     }
     
     
@@ -184,17 +190,13 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         
         if matchingCubes(cubes: foundedPair) {
             Task {
-                 try await foundedMatchCubes(for: foundedPair)
+                 await foundedMatchCubes(for: foundedPair)
             }
             
         } else {
             Task {
-                try await delayOpenedAndClose(for: foundedPair)
-               
-              //  touchesDisabled = false
-
+                await delayOpenedAndClose(for: foundedPair)
             }
-            
         }
     }
     
@@ -203,20 +205,30 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         callback()
     }
     
-    func delayOpenedAndClose(for cubes: [CubeModel]) async throws {
-        try await performDelay {
-            for cube in cubes {
-                self.opened.insert(cube.id)
-            }
+    func openedSelectedCubes(for cubes: [CubeModel]) {
+        for cube in cubes {
+            self.opened.insert(cube.id)
+        }
+    }
+    
+    func removedOpenedCubes(for cubes: [CubeModel]) {
+        for cube in cubes {
+            self.opened.remove(cube.id)
+        }
+    }
+        
+    // move open and close cubes when AI turn
+    func delayOpenedAndClose(for cubes: [CubeModel]) async {
+        let taskManager = TaskManager()
+        await taskManager.performWithDelay {
+            self.openedSelectedCubes(for: cubes)
         }
         
-        try await performDelay {
-            for cube in cubes {
-                self.opened.remove(cube.id)
-            }
+        await taskManager.performWithDelay {
+            self.removedOpenedCubes(for: cubes)
+            
         }
-        try Task.checkCancellation()
-        touchesDisabled = false
+        self.touchesDisabled = false
         
     }
     
@@ -227,12 +239,12 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
     // MARK: - combine working on AI move
     private func actionMoveOpponent() {
         if stepsCount % 3 == 0 {
-            perfectMatchCubesAI()
+           perfectMatchCubesAI()
+            
         } else {
             openRandomCubesAI()
         }
        
-
     }
 }
 

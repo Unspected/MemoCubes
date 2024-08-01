@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD150A6B2C555D0700F986EE /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD150A6A2C555D0700F986EE /* PlayerService.swift */; };
 		DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD244D542C4CB43300DAC00B /* ScaleOnChangeModifier.swift */; };
 		DD2473902C464A5100FF925A /* Alladhina-font.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD24738F2C464A5100FF925A /* Alladhina-font.otf */; };
 		DD2473922C464A7C00FF925A /* BulanRamadhan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473912C464A7C00FF925A /* BulanRamadhan.ttf */; };
@@ -25,9 +26,12 @@
 		DD82F1852C404BD9001EAB04 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1842C404BD9001EAB04 /* GameViewModel.swift */; };
 		DD885CE42C5304F100986DCE /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD885CE32C5304F100986DCE /* CustomAlertView.swift */; };
 		DDB2C43A2C52C2C9004DFC19 /* MovePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */; };
+		DDF7027E2C54CC2C00F8BF71 /* GameMemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */; };
+		DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD150A6A2C555D0700F986EE /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		DD244D542C4CB43300DAC00B /* ScaleOnChangeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleOnChangeModifier.swift; sourceTree = "<group>"; };
 		DD24738F2C464A5100FF925A /* Alladhina-font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alladhina-font.otf"; sourceTree = "<group>"; };
 		DD2473912C464A7C00FF925A /* BulanRamadhan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BulanRamadhan.ttf; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		DD82F1842C404BD9001EAB04 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		DD885CE32C5304F100986DCE /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePointer.swift; sourceTree = "<group>"; };
+		DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMemoService.swift; sourceTree = "<group>"; };
+		DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 		DD49BEE32C3F2DF70071E9C4 /* Memo cubes */ = {
 			isa = PBXGroup;
 			children = (
+				DDF7027C2C54CC1B00F8BF71 /* Services */,
 				DD2C29A02C5092C900E8F3ED /* Sandbox */,
 				DD244D532C4CB3FF00DAC00B /* ViewModifiers */,
 				DD2473982C464C8D00FF925A /* Extensions */,
@@ -163,8 +170,18 @@
 			isa = PBXGroup;
 			children = (
 				DD82F1842C404BD9001EAB04 /* GameViewModel.swift */,
+				DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DDF7027C2C54CC1B00F8BF71 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */,
+				DD150A6A2C555D0700F986EE /* PlayerService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,13 +259,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD49BEFA2C3F2E950071E9C4 /* MainMenu.swift in Sources */,
+				DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */,
 				DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */,
 				DD82F1822C403513001EAB04 /* Cube.swift in Sources */,
 				DD49BEF12C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld in Sources */,
 				DD2C29A22C5092D600E8F3ED /* TestClass.swift in Sources */,
+				DD150A6B2C555D0700F986EE /* PlayerService.swift in Sources */,
 				DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */,
 				DD885CE42C5304F100986DCE /* CustomAlertView.swift in Sources */,
 				DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */,
+				DDF7027E2C54CC2C00F8BF71 /* GameMemoService.swift in Sources */,
 				DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */,
 				DDB2C43A2C52C2C9004DFC19 /* MovePointer.swift in Sources */,
 				DD49BEFC2C3F415B0071E9C4 /* GameView.swift in Sources */,

@@ -39,6 +39,7 @@ struct GameView: View {
                             withAnimation(.linear(duration: 0.5)) {
                                 if !viewModel.opened.contains(cube.id) {
                                     viewModel.onTapCube(cube: cube)
+                                    
                                 }
                             }
                         }
