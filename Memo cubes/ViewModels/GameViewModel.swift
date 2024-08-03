@@ -5,13 +5,10 @@ actor TaskManager {
     
     func performWithDelay(seconds: Int = 1, _ callback: @escaping () -> Void) async {
        
-        print("\(String(describing: callback)) start")
         try? await Task.sleep(for:.seconds(seconds))
-        
         DispatchQueue.main.async {
             callback()
         }
-        print("\(String(describing: callback)) finished")
         }
 }
 
@@ -41,7 +38,6 @@ protocol OpponentServiceProtocol {
 @MainActor
 final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServiceProtocol {
     
-    private let serialQueue = DispatchQueue(label: "serial.queue")
     @MainActor private let taskManager = TaskManager()
     private let cubeImages: [String] = ["magic-carpet", "swords", "camel",
                                         "camel-shape", "cactus", "castle",
@@ -50,12 +46,21 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                                         "scarab_bug", "snake"]
     // TODO
     // @Published var gameDifficulty: Int = 0 where is 0 it's hard and 4 easy
-    @Published var opponentScore: Int = 0
-    @Published var playerScore: Int = 0
-    @Published var winPoints: Int = 0
+    @Published var opponentScore: Int = 0 {
+        didSet {
+            checkGameIsOver()
+        }
+    }
+    @Published var playerScore: Int = 0 {
+        didSet {
+            checkGameIsOver()
+        }
+    }
+    
     @Published var selectedCubes: [CubeModel] = []
     @Published var selectedCubesOpponent: [CubeModel] = []
     @Published var cubes: [CubeModel] = []
+    @Published var finishGameAlert: Bool = false
     
     @Published
     private(set)var opened: Set<CubeModel.ID> = []
@@ -92,6 +97,21 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
             })
     }
     
+    private func checkGameIsOver() {
+        if opened.count == cubes.count {
+            self.finishGameAlert = true
+        }
+    }
+    
+    func prepareGameFieldForNewGame() {
+        opened.removeAll()
+        disabled.removeAll()
+        shuffleGame()
+        self.finishGameAlert = false
+        self.touchesDisabled = false
+        self.stepsCount = 0
+    }
+    
     private func checkSelection() {
         guard selectedCubes.count == 2 else {
             return
@@ -105,28 +125,29 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                     disabled.insert(cube.id)
                 }
             selectedCubes.removeAll()
-            
+            print("ход противника после совпадения")
             Task(priority: .high) {
+                try await Task.sleep(for: .seconds(1))
+                
                 await taskManager.performWithDelay {
                     self.actionMoveOpponent()
                 }
             }
             
         } else {
-            Task(priority: .high) {
+            Task {
+                print("закрывает кубики")
                 await taskManager.performWithDelay {
                     self.selectedCubes.forEach { cube in
                         self.opened.remove(cube.id)
                     }
                     self.selectedCubes.removeAll()
+                    print("кубики удаленны из выбранных")
                 }
-            }
-            
-            Task(priority: .high) {
+                
+                try await Task.sleep(for: .seconds(1))
                 print("Ход противника")
-                await taskManager.performWithDelay {
-                    self.actionMoveOpponent()
-                }
+                self.actionMoveOpponent()
             }
             
         }
@@ -147,89 +168,80 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         let filteredCubes = cubes.filter { !disabled.contains($0.id) }
         guard let openRandomCube = filteredCubes.randomElement(),
                 !disabled.contains(openRandomCube.id),
-                !opened.contains(openRandomCube.id),
+//                !opened.contains(openRandomCube.id),
               disabled.count >= (disabled.count - 2) else {
             return
         }
         
         let foundedPair = cubes.filter { $0.imageName == openRandomCube.imageName }
         Task {
-           await foundedMatchCubes(for: foundedPair)
+            await foundedMatchCubes(for: foundedPair)
         }
-        
     }
     
     func foundedMatchCubes(for cubes: [CubeModel]) async {
-        await taskManager.performWithDelay {
+        Task {
             for cube in cubes {
                 self.opened.insert(cube.id)
                 self.disabled.insert(cube.id)
+                try await Task.sleep(for: .seconds(1))
             }
             self.opponentScore += 1
-            
+            self.touchesDisabled = false
         }
-        self.touchesDisabled = false
-        
     }
     
+    
+    // TODO : Исправить алгоритм здесь
+    private func generateRandomCubesForOpen() -> [CubeModel] {
+        var randomCubes: [CubeModel] = []
+        let filteredCubes = cubes.filter { !disabled.contains($0.id) }
+        while randomCubes.count != 2 {
+            if let randomCube = filteredCubes.randomElement(),
+               let randomCube2 = filteredCubes.randomElement(),
+               !disabled.contains(randomCube.id),
+               !disabled.contains(randomCube2.id),
+               disabled.count >= (disabled.count - 2) {
+        
+                if randomCube != randomCube2 {
+                    randomCubes.append(randomCube)
+                    randomCubes.append(randomCube2)
+                }
+            }
+        }
+        return randomCubes
+    }
     
     // MARK: - open random pair of cube and compare them
     func openRandomCubesAI() {
-        let filteredCubes = cubes.filter { !disabled.contains($0.id) }
-        guard let openRandomCube = filteredCubes.randomElement(),
-                let openRandomCube2 = filteredCubes.randomElement(),
-                !disabled.contains(openRandomCube.id),
-                !opened.contains(openRandomCube.id),
-                !disabled.contains(openRandomCube2.id),
-                !opened.contains(openRandomCube2.id),
-              disabled.count >= (disabled.count - 2) else {
-            return
-        }
-        
-        let foundedPair = [openRandomCube, openRandomCube2]
-        
-        if matchingCubes(cubes: foundedPair) {
+            let foundedPair = generateRandomCubesForOpen()
+            print(foundedPair)
+            print(foundedPair.count)
             Task {
-                 await foundedMatchCubes(for: foundedPair)
+                if matchingCubes(cubes: foundedPair) {
+                    await foundedMatchCubes(for: foundedPair)
+                } else {
+                    delayOpenedAndClose(for: foundedPair)
+                }
+                
             }
-            
-        } else {
-            Task {
-                await delayOpenedAndClose(for: foundedPair)
-            }
-        }
-    }
-    
-    private func performDelay(timeSleep: Int = 1 ,_ callback: @escaping () -> Void) async throws {
-        try await Task.sleep(for: .seconds(timeSleep))
-        callback()
-    }
-    
-    func openedSelectedCubes(for cubes: [CubeModel]) {
-        for cube in cubes {
-            self.opened.insert(cube.id)
-        }
-    }
-    
-    func removedOpenedCubes(for cubes: [CubeModel]) {
-        for cube in cubes {
-            self.opened.remove(cube.id)
-        }
     }
         
     // move open and close cubes when AI turn
-    func delayOpenedAndClose(for cubes: [CubeModel]) async {
-        let taskManager = TaskManager()
-        await taskManager.performWithDelay {
-            self.openedSelectedCubes(for: cubes)
-        }
-        
-        await taskManager.performWithDelay {
-            self.removedOpenedCubes(for: cubes)
+    func delayOpenedAndClose(for cubes: [CubeModel])  {
+        Task {
+            for cube in cubes {
+                self.opened.insert(cube.id)
+                try await Task.sleep(for: .seconds(1))
+            }
             
+            for cube in cubes {
+                self.opened.remove(cube.id)
+                try await Task.sleep(for: .seconds(1))
+            }
+            
+            self.touchesDisabled = false
         }
-        self.touchesDisabled = false
-        
     }
     
     func matchingCubes(cubes: [CubeModel]) -> Bool {
@@ -238,12 +250,15 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         
     // MARK: - combine working on AI move
     private func actionMoveOpponent() {
-        if stepsCount % 3 == 0 {
-           perfectMatchCubesAI()
-            
-        } else {
-            openRandomCubesAI()
-        }
+        openRandomCubesAI()
+       // perfectMatchCubesAI()
+        
+//        if stepsCount % 3 == 0 {
+//           perfectMatchCubesAI()
+//            
+//        } else {
+//            openRandomCubesAI()
+//        }
        
     }
 }

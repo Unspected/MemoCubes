@@ -23,6 +23,7 @@ struct GameView: View {
             scoreBoard()
             Spacer()
             ZStack {
+                
                 LazyVGrid(columns: columns, spacing: 5) {
                     ForEach(viewModel.cubes) { cube in
                         Cube(
@@ -46,7 +47,7 @@ struct GameView: View {
                     }
                 }
                 if viewModel.touchesDisabled {
-                    Color.black.opacity(0.5)
+                    Color.black.opacity(0.3)
                             .edgesIgnoringSafeArea(.all)
                             .onTapGesture {
                             }
@@ -62,6 +63,21 @@ struct GameView: View {
                 .scaledToFill()
                 .ignoresSafeArea(.all)
         )
+        .popover(isPresented: $viewModel.finishGameAlert, content: {
+            CustomAlertView(
+                title: "Game Over",
+                message: "Your score: \(viewModel.playerScore) \n Opponent score: \(viewModel.opponentScore)",
+                primaryButtonLabel: "Main Menu",
+                primaryButtonAction: { dismiss() },
+                secondaryButtonLabel: "Play again",
+                secondaryButtonAction: { viewModel.prepareGameFieldForNewGame() })
+                .padding(10)
+                .presentationBackground(.clear)
+        })
+    
+
+        
+        
     }
     
     @ViewBuilder
