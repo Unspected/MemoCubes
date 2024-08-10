@@ -11,15 +11,6 @@ actor TaskManager {
     }
 }
 
-struct CubeModel: Identifiable, Equatable {
-    let id: UUID
-    let imageName: String
-    
-    init(imageName: String) {
-           self.id = UUID()
-           self.imageName = imageName
-    }
-}
 
 @MainActor
 protocol CubesServiceProtocol {
@@ -43,7 +34,7 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                                         "genie_lamp", "oil_fabric", "papyrus",
                                         "scorpion", "magic_lamp", "sarcophagus",
                                         "scarab_bug", "snake"]
-    // TODO
+    
     // @Published var gameDifficulty: Int = 0 where is 0 it's hard and 4 easy
     @Published var opponentScore: Int = 0 {
         didSet {
@@ -98,6 +89,7 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
     
     private func checkGameIsOver() {
         if opened.count == cubes.count {
+            self.touchesDisabled = false
             self.finishGameAlert = true
         }
     }
@@ -125,7 +117,7 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                     disabled.insert(cube.id)
                 }
             selectedCubes.removeAll()
-            print("ход противника после совпадения")
+//            print("ход противника после совпадения")
             Task(priority: .high) {
                 try await Task.sleep(for: .seconds(1))
                 
@@ -136,17 +128,17 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
             
         } else {
             Task {
-                print("закрывает кубики")
+//                print("закрывает кубики")
                 await taskManager.performWithDelay {
                     self.selectedCubes.forEach { cube in
                         self.opened.remove(cube.id)
                     }
                     self.selectedCubes.removeAll()
-                    print("кубики удаленны из выбранных")
+//                    print("кубики удаленны из выбранных")
                 }
                 
                 try await Task.sleep(for: .seconds(1))
-                print("Ход противника")
+//                print("Ход противника")
                 self.actionMoveOpponent()
             }
             
@@ -168,7 +160,6 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         let filteredCubes = cubes.filter { !disabled.contains($0.id) }
         guard let openRandomCube = filteredCubes.randomElement(),
                 !disabled.contains(openRandomCube.id),
-//                !opened.contains(openRandomCube.id),
               disabled.count >= (disabled.count - 2) else {
             return
         }
@@ -217,17 +208,15 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
     // MARK: - open random pair of cube and compare them
     func openRandomCubesAI() {
             let foundedPair = generateRandomCubesForOpen()
-            print(foundedPair)
-            print(foundedPair.count)
             Task {
                 if matchingCubes(cubes: foundedPair) {
                     await foundedMatchCubes(for: foundedPair)
+                    checkGameIsOver()
                 } else {
                     delayOpenedAndClose(for: foundedPair)
+                    checkGameIsOver()
                 }
-                
-                checkGameIsOver()
-            }
+        }
     }
         
     // move open and close cubes when AI turn
@@ -253,13 +242,13 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         
     // MARK: - combine working on AI move
     private func actionMoveOpponent() {
+        // каждые 3 ход противника он угадывает со 100% вероятностью
         if stepsCount % 3 == 0 {
            perfectMatchCubesAI()
             
         } else {
             openRandomCubesAI()
         }
-       
     }
 }
 
