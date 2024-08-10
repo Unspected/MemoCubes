@@ -36,16 +36,8 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                                         "scarab_bug", "snake"]
     
     // @Published var gameDifficulty: Int = 0 where is 0 it's hard and 4 easy
-    @Published var opponentScore: Int = 0 {
-        didSet {
-            checkGameIsOver()
-        }
-    }
-    @Published var playerScore: Int = 0 {
-        didSet {
-            checkGameIsOver()
-        }
-    }
+    @Published var opponentScore: Int = 0
+    @Published var playerScore: Int = 0
     
     @Published var selectedCubes: [CubeModel] = []
     @Published var selectedCubesOpponent: [CubeModel] = []
@@ -99,8 +91,9 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         disabled.removeAll()
         shuffleGame()
         self.finishGameAlert = false
-        self.touchesDisabled = false
         self.stepsCount = 0
+        self.playerScore = 0
+        self.opponentScore = 0
     }
     
     private func checkSelection() {
