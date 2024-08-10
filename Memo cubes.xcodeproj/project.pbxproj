@@ -14,6 +14,7 @@
 		DD2473942C464AA200FF925A /* Persian.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473932C464AA200FF925A /* Persian.otf */; };
 		DD2473962C464ABB00FF925A /* Ramadhankarim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */; };
 		DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */; };
+		DD42B6D12C672FD10073F062 /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42B6D02C672FD10073F062 /* CubeModel.swift */; };
 		DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */; };
 		DD49BEE92C3F2DF80071E9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */; };
 		DD49BEEC2C3F2DF80071E9C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEEB2C3F2DF80071E9C4 /* Preview Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramadhankarim.ttf; sourceTree = "<group>"; };
 		DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Memo-cubes-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontsExtension.swift; sourceTree = "<group>"; };
+		DD42B6D02C672FD10073F062 /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
 		DD49BEE12C3F2DF70071E9C4 /* Memo cubes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memo cubes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo_cubesApp.swift; sourceTree = "<group>"; };
 		DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DD42B6CF2C672FBF0073F062 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD42B6D02C672FD10073F062 /* CubeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DD49BED82C3F2DF70071E9C4 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		DD49BEE32C3F2DF70071E9C4 /* Memo cubes */ = {
 			isa = PBXGroup;
 			children = (
+				DD42B6CF2C672FBF0073F062 /* Models */,
 				DDF7027C2C54CC1B00F8BF71 /* Services */,
 				DD244D532C4CB3FF00DAC00B /* ViewModifiers */,
 				DD2473982C464C8D00FF925A /* Extensions */,
@@ -309,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD42B6D12C672FD10073F062 /* CubeModel.swift in Sources */,
 				DD665B012C5D36DC001272CF /* CustomAlertView.swift in Sources */,
 				DD49BEFA2C3F2E950071E9C4 /* MainMenu.swift in Sources */,
 				DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */,
