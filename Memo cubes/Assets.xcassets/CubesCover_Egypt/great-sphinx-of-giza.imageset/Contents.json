@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "great-sphinx-of-giza.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "great-sphinx-of-giza 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "great-sphinx-of-giza 2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -4,12 +4,11 @@ import Combine
 actor TaskManager {
     
     func performWithDelay(seconds: Int = 1, _ callback: @escaping () -> Void) async {
-       
         try? await Task.sleep(for:.seconds(seconds))
         DispatchQueue.main.async {
             callback()
         }
-        }
+    }
 }
 
 struct CubeModel: Identifiable, Equatable {
@@ -118,6 +117,7 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         }
         stepsCount += 1 // step count for move your opponent
         touchesDisabled = true // disabled whole screen for touch
+        checkGameIsOver()
         
         if matchingCubes(cubes: selectedCubes) {
             playerScore += 1
@@ -176,6 +176,8 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         let foundedPair = cubes.filter { $0.imageName == openRandomCube.imageName }
         Task {
             await foundedMatchCubes(for: foundedPair)
+            
+            checkGameIsOver()
         }
     }
     
@@ -224,6 +226,7 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
                     delayOpenedAndClose(for: foundedPair)
                 }
                 
+                checkGameIsOver()
             }
     }
         
@@ -250,15 +253,12 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
         
     // MARK: - combine working on AI move
     private func actionMoveOpponent() {
-        openRandomCubesAI()
-       // perfectMatchCubesAI()
-        
-//        if stepsCount % 3 == 0 {
-//           perfectMatchCubesAI()
-//            
-//        } else {
-//            openRandomCubesAI()
-//        }
+        if stepsCount % 3 == 0 {
+           perfectMatchCubesAI()
+            
+        } else {
+            openRandomCubesAI()
+        }
        
     }
 }
