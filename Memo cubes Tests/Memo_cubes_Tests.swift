@@ -1,24 +1,33 @@
 import XCTest
 @testable import Memo_cubes
 
+
 final class Memo_cubes_Tests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testAddCubes() async throws {
+        let vmMock = await GameViewModelMock()
+        
+        if let randomCube = await vmMock.cubes.randomElement(), let randomCube2 = await vmMock.cubes.randomElement() {
+                await vmMock.onTapCube(cube: randomCube)
+                await vmMock.onTapCube(cube: randomCube2)
+                let actualResult = await vmMock.selectedCubes.count
+                XCTAssertEqual(actualResult, 2, "Added cubes wasn't added")
+        }
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testMatchingCubes() async throws {
+        let vmMock = await GameViewModelMock()
+        let samePair = await vmMock.cubes.filter { $0.imageName == "pharaoh" }
+        let compareResult = await vmMock.matchingCubes(cubes: samePair)
+        XCTAssertTrue(compareResult)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testUnMatchingCubes() async throws {
+        let vmMock = await GameViewModelMock()
+        let notMatchPair = await vmMock.cubes.filter { $0.imageName != $0.imageName }
+        let comparableResult = await vmMock.matchingCubes(cubes: notMatchPair)
+        XCTAssertFalse(comparableResult)
     }
-
 
 }
 

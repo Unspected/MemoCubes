@@ -26,6 +26,7 @@
 		DD82F1822C403513001EAB04 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1812C403513001EAB04 /* Cube.swift */; };
 		DD82F1852C404BD9001EAB04 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1842C404BD9001EAB04 /* GameViewModel.swift */; };
 		DDA652F52C61A80500B659A9 /* Memo_cubes_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA652F42C61A80500B659A9 /* Memo_cubes_Tests.swift */; };
+		DDB052AB2C687D8B002975D3 /* GameViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */; };
 		DDB2C43A2C52C2C9004DFC19 /* MovePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */; };
 		DDF7027E2C54CC2C00F8BF71 /* GameMemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */; };
 		DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */; };
@@ -64,6 +65,7 @@
 		DD82F1842C404BD9001EAB04 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		DDA652F22C61A80500B659A9 /* Memo cubes Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Memo cubes Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA652F42C61A80500B659A9 /* Memo_cubes_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo_cubes_Tests.swift; sourceTree = "<group>"; };
+		DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelMock.swift; sourceTree = "<group>"; };
 		DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePointer.swift; sourceTree = "<group>"; };
 		DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMemoService.swift; sourceTree = "<group>"; };
 		DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel2.swift; sourceTree = "<group>"; };
@@ -201,8 +203,17 @@
 			isa = PBXGroup;
 			children = (
 				DDA652F42C61A80500B659A9 /* Memo_cubes_Tests.swift */,
+				DDB052A92C687D6C002975D3 /* Common */,
 			);
 			path = "Memo cubes Tests";
+			sourceTree = "<group>";
+		};
+		DDB052A92C687D6C002975D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		DDF7027C2C54CC1B00F8BF71 /* Services */ = {
@@ -342,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB052AB2C687D8B002975D3 /* GameViewModelMock.swift in Sources */,
 				DDA652F52C61A80500B659A9 /* Memo_cubes_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

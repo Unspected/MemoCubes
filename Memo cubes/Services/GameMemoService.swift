@@ -1,22 +1,9 @@
 import Foundation
 
-struct CubeModel2: Identifiable, Equatable {
-    let id: UUID
-    let imageName: String
-    var open: Bool
-    var disabled: Bool
-    
-    init(imageName: String) {
-        self.id = UUID()
-        self.imageName = imageName
-        self.open = false
-        self.disabled = false
-    }
-}
 
 protocol GameMemoServiceProtocol {
-    func fetchCubes() async throws -> [CubeModel2]
-    func gameOver(cubes: [CubeModel2]) -> Bool
+    func fetchCubes() async throws -> [CubeModel]
+    func gameOver(cubes: [CubeModel]) -> Bool
     
 }
 
@@ -30,16 +17,16 @@ final class GameMemoService: GameMemoServiceProtocol {
     
     
     // MARL: GameMemoServiceProtocol
-    func fetchCubes() async throws -> [CubeModel2] {
+    func fetchCubes() async throws -> [CubeModel] {
         return cubeImages
             .flatMap { [ $0, $0] }
             .shuffled()
             .map({ imageName in
-                CubeModel2(imageName: imageName)
+                CubeModel(imageName: imageName)
             })
     }
     
-    func gameOver(cubes: [CubeModel2]) -> Bool {
+    func gameOver(cubes: [CubeModel]) -> Bool {
         return cubes.count == cubes.map { $0.disabled }.count 
     }
     
