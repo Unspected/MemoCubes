@@ -16,19 +16,26 @@ actor TaskManager {
 protocol CubesServiceProtocol {
     func onTapCube(cube: CubeModel)
     func matchingCubes(cubes: [CubeModel]) -> Bool
-    func foundedMatchCubes(for cubes: [CubeModel]) async
+    var cubes: [CubeModel] { get }
+    var playerScore: Int { get set }
+    var selectedCubes: [CubeModel] { get }
+    var finishGameAlert: Bool { get }
+    
 }
 
 @MainActor
 protocol OpponentServiceProtocol {
     func perfectMatchCubesAI() async
     func openRandomCubesAI()
+    func foundedMatchCubes(for cubes: [CubeModel]) async
+    var selectedCubesOpponent: [CubeModel] { get }
+    var opponentScore: Int { get }
 }
 
 @MainActor
 final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServiceProtocol {
     
-    @MainActor private let taskManager = TaskManager()
+    private let taskManager = TaskManager()
     private let cubeImages: [String] = ["magic-carpet", "swords", "camel",
                                         "camel-shape", "cactus", "castle",
                                         "genie_lamp", "oil_fabric", "papyrus",

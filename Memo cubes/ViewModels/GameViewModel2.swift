@@ -3,14 +3,14 @@ import Combine
 
 protocol GameViewProtocol {
     func fetchCubes() async
-    func onTap(cube: CubeModel2)
+    func onTap(cube: CubeModel)
 }
 
 final class GameViewModel2: GameViewProtocol {
     
     private let service: GameMemoServiceProtocol
     
-    @Published var cubes: [CubeModel2] = []
+    @Published var cubes: [CubeModel] = []
     @Published var errorMessage: Error?
     @Published var disabledAllTouches: Bool = false
     @Published var stepsCount: Int = 0
@@ -33,7 +33,7 @@ final class GameViewModel2: GameViewProtocol {
         }
     }
     
-    func onTap(cube: CubeModel2) {
+    func onTap(cube: CubeModel) {
         guard !disabledAllTouches, !cube.open, !cube.disabled else { return }
         player.addCube(cube: cube)
         stepsCount += 1
@@ -41,7 +41,7 @@ final class GameViewModel2: GameViewProtocol {
     
     // MARK: Logic Compare
     private func matchCubes() -> Bool {
-        var foundedCubes: [CubeModel2] = []
+        var foundedCubes: [CubeModel] = []
         for cube in player.cubeStorage {
             if let openedCube = cubes.first(where: {$0.id == cube }) {
                 foundedCubes.append(openedCube)
@@ -50,13 +50,13 @@ final class GameViewModel2: GameViewProtocol {
         return foundedCubes[0] == foundedCubes[1]
     }
     
-    private func openCubeAction(cubeID: CubeModel2.ID) {
+    private func openCubeAction(cubeID: CubeModel.ID) {
         if let index = cubes.firstIndex(where: { $0.id == cubeID }) {
             cubes[index].open = true
         }
     }
     
-    private func disabledCubeAction(cubeID: CubeModel2.ID) {
+    private func disabledCubeAction(cubeID: CubeModel.ID) {
         if let index = cubes.firstIndex(where: { $0.id == cubeID }) {
             cubes[index].disabled = true
         }

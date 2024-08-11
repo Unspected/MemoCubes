@@ -4,13 +4,12 @@ struct MainMenu: View {
     
     @State var isShowView: Bool = false
     @State var isAppear = false
-    @State var titleText = "Welcome"
     
     var body: some View {
         VStack {
-            Text(titleText)
+            Text("Welcome")
                 .foregroundStyle(Color.white)
-                .font(.arabic(.ramadhankarimFont, 65))
+                .font(.arabic(.alladinFont, 65))
             startPlayButton()
                 .padding(.top, 10)
             Spacer()
@@ -30,7 +29,7 @@ struct MainMenu: View {
     
     @ViewBuilder
     private func startPlayButton() -> some View {
-        Text("Play vs AI")
+        Text("Single Player")
             .foregroundStyle(Color.white)
             .font(.arabic(.alladinFont, 35))
             .frame(minWidth: 200, minHeight: 40)
