@@ -28,30 +28,3 @@ struct Cube: View {
     }
 }
 
-#if DEBUG
-
-struct Cube_Preview: View {
-    @State private var isOpened: Bool = false
-    @State private var isDisable: Bool = false
-    
-    var body: some View {
-        Cube(
-            viewState: .init(
-                imageName: "swords",
-                isOpened: isOpened
-            )
-        )
-        .frame(width: 70, height: 70)
-        .onTapGesture {
-            isOpened.toggle()
-        }
-    }
-}
-
-#endif
-
-#Preview {
-    VStack {
-        Cube_Preview()
-    }
-}

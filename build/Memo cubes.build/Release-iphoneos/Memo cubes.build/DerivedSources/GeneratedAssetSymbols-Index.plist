@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colors</key>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACColorNameBlueGray</string>
+			<key>relativePath</key>
+			<string>./blueGray.colorset</string>
+			<key>swiftSymbol</key>
+			<string>blueGray</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACColorNameNaturalWood</string>
+			<key>relativePath</key>
+			<string>./naturalWood.colorset</string>
+			<key>swiftSymbol</key>
+			<string>naturalWood</string>
+		</dict>
+	</array>
+	<key>images</key>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameAnkh</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/ankh.imageset</string>
+			<key>swiftSymbol</key>
+			<string>ankh</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameAnubis</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/anubis.imageset</string>
+			<key>swiftSymbol</key>
+			<string>anubis</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameCactus</string>
+			<key>relativePath</key>
+			<string>./CubesCover/cactus.imageset</string>
+			<key>swiftSymbol</key>
+			<string>cactus</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameCamel</string>
+			<key>relativePath</key>
+			<string>./CubesCover/camel.imageset</string>
+			<key>swiftSymbol</key>
+			<string>camel</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameCamelShape</string>
+			<key>relativePath</key>
+			<string>./CubesCover/camel-shape.imageset</string>
+			<key>swiftSymbol</key>
+			<string>camelShape</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameCastle</string>
+			<key>relativePath</key>
+			<string>./CubesCover/castle.imageset</string>
+			<key>swiftSymbol</key>
+			<string>castle</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameCleopatra</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/cleopatra.imageset</string>
+			<key>swiftSymbol</key>
+			<string>cleopatra</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameDesert</string>
+			<key>relativePath</key>
+			<string>./desert.imageset</string>
+			<key>swiftSymbol</key>
+			<string>desert</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameEagle</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/eagle.imageset</string>
+			<key>swiftSymbol</key>
+			<string>eagle</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameEyeOfRa</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/eye-of-ra.imageset</string>
+			<key>swiftSymbol</key>
+			<string>eyeOfRa</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameGameBackground</string>
+			<key>relativePath</key>
+			<string>./game_background.imageset</string>
+			<key>swiftSymbol</key>
+			<string>gameBackground</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameGenieLamp</string>
+			<key>relativePath</key>
+			<string>./CubesCover/genie_lamp.imageset</string>
+			<key>swiftSymbol</key>
+			<string>genieLamp</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameGreatSphinxOfGiza</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/great-sphinx-of-giza.imageset</string>
+			<key>swiftSymbol</key>
+			<string>greatSphinxOfGiza</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameMagicCarpet</string>
+			<key>relativePath</key>
+			<string>./CubesCover/magic-carpet.imageset</string>
+			<key>swiftSymbol</key>
+			<string>magicCarpet</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameMagicLamp</string>
+			<key>relativePath</key>
+			<string>./CubesCover/magic_lamp.imageset</string>
+			<key>swiftSymbol</key>
+			<string>magicLamp</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameOilFabric</string>
+			<key>relativePath</key>
+			<string>./CubesCover/oil_fabric.imageset</string>
+			<key>swiftSymbol</key>
+			<string>oilFabric</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNamePapyrus</string>
+			<key>relativePath</key>
+			<string>./CubesCover/papyrus.imageset</string>
+			<key>swiftSymbol</key>
+			<string>papyrus</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNamePharaoh</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/pharaoh.imageset</string>
+			<key>swiftSymbol</key>
+			<string>pharaoh</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameSarcophagus</string>
+			<key>relativePath</key>
+			<string>./CubesCover/sarcophagus.imageset</string>
+			<key>swiftSymbol</key>
+			<string>sarcophagus</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameScarabBug</string>
+			<key>relativePath</key>
+			<string>./CubesCover/scarab_bug.imageset</string>
+			<key>swiftSymbol</key>
+			<string>scarabBug</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameScorpion</string>
+			<key>relativePath</key>
+			<string>./CubesCover/scorpion.imageset</string>
+			<key>swiftSymbol</key>
+			<string>scorpion</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameSnake</string>
+			<key>relativePath</key>
+			<string>./CubesCover/snake.imageset</string>
+			<key>swiftSymbol</key>
+			<string>snake</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameSphinx</string>
+			<key>relativePath</key>
+			<string>./CubesCover_Egypt/sphinx.imageset</string>
+			<key>swiftSymbol</key>
+			<string>sphinx</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameSwords</string>
+			<key>relativePath</key>
+			<string>./CubesCover/swords.imageset</string>
+			<key>swiftSymbol</key>
+			<string>swords</string>
+		</dict>
+	</array>
+	<key>symbols</key>
+	<array/>
+</dict>
+</plist>

@@ -10,8 +10,10 @@ struct MainMenu: View {
             Text("Welcome")
                 .foregroundStyle(Color.white)
                 .font(.arabic(.alladinFont, 65))
-            startPlayButton()
-                .padding(.top, 10)
+            gameButton("Single Player", GameView())
+                .padding(.top, 20)
+            gameButton("Two Players", GameView())
+                .padding(.top, 20)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -21,15 +23,15 @@ struct MainMenu: View {
                 .scaledToFill()
                 .ignoresSafeArea(.all)
         )
-        .fullScreenCover(isPresented: $isShowView, content: {
-            GameView()
-        })
-        
+//        .fullScreenCover(isPresented: $isShowView, content: {
+//            GameView()
+//        })
     }
     
+    
     @ViewBuilder
-    private func startPlayButton() -> some View {
-        Text("Single Player")
+    private func gameButton(_ nameButton: String ,_ view: some View ) -> some View {
+        Text(nameButton)
             .foregroundStyle(Color.white)
             .font(.arabic(.alladinFont, 35))
             .frame(minWidth: 200, minHeight: 40)
@@ -37,7 +39,12 @@ struct MainMenu: View {
             .onTapGesture {
                 isShowView.toggle()
             }
+            .fullScreenCover(isPresented: $isShowView, content: {
+                view
+            })
     }
+    
+    
 }
 
 #Preview {

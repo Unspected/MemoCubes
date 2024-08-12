@@ -1,0 +1,32 @@
+version: "Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)"
+options: "36ff1e028cc5df14ed18b49b2cd1cef03a6e6656067f0cd280d3eda9647f5430"
+build_start_time: [1723486146, 797726000]
+build_end_time: [1723486149, 431630000]
+inputs:
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Components/Cube.swift": [1723486143, 516994344]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Components/CustomAlertView.swift": [1722616434, 260044046]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Components/MovePointer.swift": [1721944705, 319690623]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Extensions/CustomFontsExtension.swift": [1721351565, 696581286]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Memo_cubesApp.swift": [1723265885, 459451147]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Models/CubeModel.swift": [1723411408, 5259170]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Persistence.swift": [1720646609, 520433295]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Services/GameMemoService.swift": [1723411408, 5511503]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Services/PlayerService.swift": [1723411408, 5821919]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/ViewModels/GameViewModel.swift": [1723411408, 6254460]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/ViewModels/GameViewModel2.swift": [1723411408, 6501626]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/ViewModifiers/ScaleOnChangeModifier.swift": [1721532117, 159337299]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Views/GameView.swift": [1722619245, 541293860]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Views/MainMenu.swift": [1723415986, 906496867]
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Views/TwoPlayersGameView.swift": [1723416037, 670339450]
+  ? "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/Item+CoreDataClass.swift"
+  : [1723478190, 344633206]
+  ? "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/Item+CoreDataProperties.swift"
+  : [1723478190, 345074161]
+  ? "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/Memo_cubes+CoreDataModel.swift"
+  : [1723478190, 343058549]
+  ? "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/UserName+CoreDataClass.swift"
+  : [1723478190, 346109030]
+  ? "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/UserName+CoreDataProperties.swift"
+  : [1723478190, 346566985]
+  ? "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1723478189, 936596123]

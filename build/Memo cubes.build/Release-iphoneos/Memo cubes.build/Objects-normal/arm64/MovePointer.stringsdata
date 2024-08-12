@@ -1,0 +1,16 @@
+{
+  "source": "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Components/MovePointer.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "PC is moving"
+      },
+      {
+        "comment": "",
+        "key": "Your turn"
+      }
+    ]
+  },
+  "version": 1
+}

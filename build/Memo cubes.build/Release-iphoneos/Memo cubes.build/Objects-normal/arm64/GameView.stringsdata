@@ -1,0 +1,32 @@
+{
+  "source": "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Views/GameView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Do you want to leave the game ?"
+      },
+      {
+        "comment": "",
+        "key": "%@"
+      },
+      {
+        "comment": "",
+        "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "Exit"
+      },
+      {
+        "comment": "",
+        "key": "Yes"
+      },
+      {
+        "comment": "",
+        "key": "No"
+      }
+    ]
+  },
+  "version": 1
+}

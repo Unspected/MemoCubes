@@ -28,6 +28,7 @@
 		DDA652F52C61A80500B659A9 /* Memo_cubes_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA652F42C61A80500B659A9 /* Memo_cubes_Tests.swift */; };
 		DDB052AB2C687D8B002975D3 /* GameViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */; };
 		DDB2C43A2C52C2C9004DFC19 /* MovePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */; };
+		DDB833942C69755C00F54930 /* TwoPlayersGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB833932C69755C00F54930 /* TwoPlayersGameView.swift */; };
 		DDF7027E2C54CC2C00F8BF71 /* GameMemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */; };
 		DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		DDA652F42C61A80500B659A9 /* Memo_cubes_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo_cubes_Tests.swift; sourceTree = "<group>"; };
 		DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelMock.swift; sourceTree = "<group>"; };
 		DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePointer.swift; sourceTree = "<group>"; };
+		DDB833932C69755C00F54930 /* TwoPlayersGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayersGameView.swift; sourceTree = "<group>"; };
 		DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMemoService.swift; sourceTree = "<group>"; };
 		DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +188,7 @@
 			children = (
 				DD49BEF92C3F2E950071E9C4 /* MainMenu.swift */,
 				DD49BEFB2C3F415B0071E9C4 /* GameView.swift */,
+				DDB833932C69755C00F54930 /* TwoPlayersGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			files = (
 				DD42B6D12C672FD10073F062 /* CubeModel.swift in Sources */,
 				DD665B012C5D36DC001272CF /* CustomAlertView.swift in Sources */,
+				DDB833942C69755C00F54930 /* TwoPlayersGameView.swift in Sources */,
 				DD49BEFA2C3F2E950071E9C4 /* MainMenu.swift in Sources */,
 				DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */,
 				DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */,

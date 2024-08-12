@@ -1,0 +1,115 @@
+{
+  "" : {
+    "const-values" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo cubes-master.swiftconstvalues",
+    "dependencies" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo cubes-master.d",
+    "diagnostics" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo cubes-master.dia",
+    "emit-module-dependencies" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo cubes-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo cubes-master-emit-module.dia",
+    "swift-dependencies" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo cubes-master.swiftdeps"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/Item+CoreDataClass.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Item+CoreDataClass.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Item+CoreDataClass.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Item+CoreDataClass.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/Item+CoreDataProperties.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Item+CoreDataProperties.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Item+CoreDataProperties.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Item+CoreDataProperties.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/Memo_cubes+CoreDataModel.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo_cubes+CoreDataModel.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo_cubes+CoreDataModel.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo_cubes+CoreDataModel.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/UserName+CoreDataClass.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/UserName+CoreDataClass.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/UserName+CoreDataClass.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/UserName+CoreDataClass.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/CoreDataGenerated/Memo_cubes/UserName+CoreDataProperties.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/UserName+CoreDataProperties.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/UserName+CoreDataProperties.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/UserName+CoreDataProperties.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Components/Cube.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Cube.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Cube.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Cube.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Components/CustomAlertView.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CustomAlertView.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CustomAlertView.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CustomAlertView.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Components/MovePointer.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/MovePointer.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/MovePointer.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/MovePointer.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Extensions/CustomFontsExtension.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CustomFontsExtension.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CustomFontsExtension.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CustomFontsExtension.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Memo_cubesApp.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo_cubesApp.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo_cubesApp.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Memo_cubesApp.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Models/CubeModel.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CubeModel.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CubeModel.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/CubeModel.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Persistence.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Persistence.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Persistence.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/Persistence.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Services/GameMemoService.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameMemoService.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameMemoService.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameMemoService.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Services/PlayerService.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/PlayerService.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/PlayerService.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/PlayerService.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/ViewModels/GameViewModel.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameViewModel.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameViewModel.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameViewModel.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/ViewModels/GameViewModel2.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameViewModel2.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameViewModel2.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameViewModel2.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/ViewModifiers/ScaleOnChangeModifier.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/ScaleOnChangeModifier.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/ScaleOnChangeModifier.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/ScaleOnChangeModifier.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Views/GameView.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameView.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameView.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/GameView.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Views/MainMenu.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/MainMenu.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/MainMenu.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/MainMenu.o"
+  },
+  "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/Views/TwoPlayersGameView.swift" : {
+    "index-unit-output-path" : "/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/TwoPlayersGameView.o",
+    "llvm-bc" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/TwoPlayersGameView.bc",
+    "object" : "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/build/Memo cubes.build/Release-iphoneos/Memo cubes.build/Objects-normal/arm64/TwoPlayersGameView.o"
+  }
+}
