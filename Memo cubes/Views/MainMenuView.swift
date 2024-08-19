@@ -1,15 +1,17 @@
 import SwiftUI
 
-struct MainMenu: View {
+struct MainMenuView: View {
     
     @State var isShowView: Bool = false
     @State var isAppear = false
     
     var body: some View {
         VStack {
-            Text("Welcome")
-                .foregroundStyle(Color.white)
-                .font(.arabic(.alladinFont, 65))
+            Image("Logo")
+                .resizable()
+                .scaledToFit()
+                .scaleEffect(0.5)
+                
             gameButton("Single Player", GameView())
                 .padding(.top, 20)
             gameButton("Two Players", GameView())
@@ -23,9 +25,7 @@ struct MainMenu: View {
                 .scaledToFill()
                 .ignoresSafeArea(.all)
         )
-//        .fullScreenCover(isPresented: $isShowView, content: {
-//            GameView()
-//        })
+
     }
     
     
@@ -48,5 +48,5 @@ struct MainMenu: View {
 }
 
 #Preview {
-    MainMenu()
+    MainMenuView()
 }

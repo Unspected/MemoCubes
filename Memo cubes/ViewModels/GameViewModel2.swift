@@ -6,7 +6,7 @@ protocol GameViewProtocol {
     func onTap(cube: CubeModel)
 }
 
-final class GameViewModel2: GameViewProtocol {
+final class GameViewModel2: ObservableObject, GameViewProtocol {
     
     private let service: GameMemoServiceProtocol
     
@@ -17,7 +17,7 @@ final class GameViewModel2: GameViewProtocol {
     
     let player: PlayerServiceProtocol
     
-    init(service: GameMemoServiceProtocol, player: PlayerServiceProtocol) {
+    init(service: GameMemoServiceProtocol = GameMemoService(), player: PlayerServiceProtocol = PlayerService(name: "Pavel")) {
         self.service = service
         self.player = player
     }
