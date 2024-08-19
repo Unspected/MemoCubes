@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnBoardingButton: View {
     // MARK: - PROPERTIES
+    @Binding var buttonTitle: String
     
     @AppStorage("isOnboarding") var isOnboarding: Bool?
     
@@ -19,7 +20,7 @@ struct OnBoardingButton: View {
         isOnboarding = false
       }) {
         HStack(spacing: 8) {
-          Text("Start")
+          Text(buttonTitle)
           
           Image(systemName: "arrow.right.circle")
             .imageScale(.large)
@@ -35,7 +36,7 @@ struct OnBoardingButton: View {
 }
 
 #Preview {
-    OnBoardingButton()
+    OnBoardingButton(buttonTitle: .constant("Next"))
         .preferredColorScheme(.dark)
         .previewLayout(.sizeThatFits)
 }
