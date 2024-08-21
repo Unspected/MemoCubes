@@ -29,7 +29,6 @@
 		DDAC36F82C72D4AC003B4900 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC36F72C72D4AC003B4900 /* OnBoardingView.swift */; };
 		DDAC36FA2C72D5F8003B4900 /* OnBoardingPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC36F92C72D5F8003B4900 /* OnBoardingPageModel.swift */; };
 		DDAC36FC2C72D636003B4900 /* PageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC36FB2C72D636003B4900 /* PageCardView.swift */; };
-		DDAC36FE2C72F3D2003B4900 /* OnBoardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAC36FD2C72F3D2003B4900 /* OnBoardingButton.swift */; };
 		DDB052AB2C687D8B002975D3 /* GameViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */; };
 		DDB2C43A2C52C2C9004DFC19 /* MovePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */; };
 		DDB833942C69755C00F54930 /* TwoPlayersGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB833932C69755C00F54930 /* TwoPlayersGameView.swift */; };
@@ -73,7 +72,6 @@
 		DDAC36F72C72D4AC003B4900 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		DDAC36F92C72D5F8003B4900 /* OnBoardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageModel.swift; sourceTree = "<group>"; };
 		DDAC36FB2C72D636003B4900 /* PageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCardView.swift; sourceTree = "<group>"; };
-		DDAC36FD2C72F3D2003B4900 /* OnBoardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingButton.swift; sourceTree = "<group>"; };
 		DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelMock.swift; sourceTree = "<group>"; };
 		DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePointer.swift; sourceTree = "<group>"; };
 		DDB833932C69755C00F54930 /* TwoPlayersGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayersGameView.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */,
 				DD665B002C5D36DC001272CF /* CustomAlertView.swift */,
 				DDAC36FB2C72D636003B4900 /* PageCardView.swift */,
-				DDAC36FD2C72F3D2003B4900 /* OnBoardingButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -350,7 +347,6 @@
 				DDAC36FC2C72D636003B4900 /* PageCardView.swift in Sources */,
 				DD665B012C5D36DC001272CF /* CustomAlertView.swift in Sources */,
 				DDB833942C69755C00F54930 /* TwoPlayersGameView.swift in Sources */,
-				DDAC36FE2C72F3D2003B4900 /* OnBoardingButton.swift in Sources */,
 				DD49BEFA2C3F2E950071E9C4 /* MainMenuView.swift in Sources */,
 				DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */,
 				DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */,

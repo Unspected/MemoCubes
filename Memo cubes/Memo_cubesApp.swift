@@ -10,12 +10,17 @@ import SwiftUI
 @main
 struct Memo_cubesApp: App {
     let persistenceController = PersistenceController.shared
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            MainMenuView()
+            if isOnboarding {
+                OnBoardingView(pages: OnboardingDataModel.models)
+            } else {
+                //            ContentView()
+                //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                MainMenuView()
+            }
         }
     }
 }
