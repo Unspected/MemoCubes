@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GameView: View {
     
+    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     @Environment(\.dismiss) var dismiss
     @State var showingAlert: Bool = false
     @StateObject var viewModel: GameViewModel = GameViewModel()
@@ -74,9 +75,6 @@ struct GameView: View {
                 .padding(10)
                 .presentationBackground(.clear)
         })
-    
-
-        
         
     }
     
@@ -84,7 +82,8 @@ struct GameView: View {
     private func scoreBoard() -> some View {
         ZStack {
             HStack {
-                Text("\(viewModel.playerName)")
+//                Text("\(userName)")
+                Text("\(users.last?.name ?? "unkown")")
                     .font(.arabic(.alladinFont, 25))
                     .fontWeight(.medium)
                 Text("\(viewModel.playerScore)")

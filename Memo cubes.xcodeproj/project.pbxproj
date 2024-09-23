@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0CE5E02C7E38B800B3D0F1 /* Uppercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0CE5DF2C7E38B800B3D0F1 /* Uppercase.swift */; };
+		DD0CE5E42C7E3E6500B3D0F1 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0CE5E32C7E3E6500B3D0F1 /* CoreDataService.swift */; };
 		DD150A6B2C555D0700F986EE /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD150A6A2C555D0700F986EE /* PlayerService.swift */; };
 		DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD244D542C4CB43300DAC00B /* ScaleOnChangeModifier.swift */; };
 		DD2473902C464A5100FF925A /* Alladhina-font.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD24738F2C464A5100FF925A /* Alladhina-font.otf */; };
@@ -18,11 +20,14 @@
 		DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */; };
 		DD49BEE92C3F2DF80071E9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */; };
 		DD49BEEC2C3F2DF80071E9C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEEB2C3F2DF80071E9C4 /* Preview Assets.xcassets */; };
-		DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEED2C3F2DF80071E9C4 /* Persistence.swift */; };
-		DD49BEF12C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEEF2C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld */; };
 		DD49BEFA2C3F2E950071E9C4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEF92C3F2E950071E9C4 /* MainMenuView.swift */; };
 		DD49BEFC2C3F415B0071E9C4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEFB2C3F415B0071E9C4 /* GameView.swift */; };
+		DD5F50DF2C80E45D004007AF /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD5F50DD2C80E45D004007AF /* User.xcdatamodeld */; };
 		DD665B012C5D36DC001272CF /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD665B002C5D36DC001272CF /* CustomAlertView.swift */; };
+		DD71BE6A2C82268D00A18154 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71BE682C82268D00A18154 /* User+CoreDataClass.swift */; };
+		DD71BE6B2C82268D00A18154 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71BE692C82268D00A18154 /* User+CoreDataProperties.swift */; };
+		DD71BE6D2C82289400A18154 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71BE6C2C82289400A18154 /* MainMenuViewModel.swift */; };
+		DD71BE6F2C82308600A18154 /* SetupUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD71BE6E2C82308600A18154 /* SetupUserView.swift */; };
 		DD82F1822C403513001EAB04 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1812C403513001EAB04 /* Cube.swift */; };
 		DD82F1852C404BD9001EAB04 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD82F1842C404BD9001EAB04 /* GameViewModel.swift */; };
 		DDA652F52C61A80500B659A9 /* Memo_cubes_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA652F42C61A80500B659A9 /* Memo_cubes_Tests.swift */; };
@@ -47,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD0CE5DF2C7E38B800B3D0F1 /* Uppercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uppercase.swift; sourceTree = "<group>"; };
+		DD0CE5E32C7E3E6500B3D0F1 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		DD150A6A2C555D0700F986EE /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		DD244D542C4CB43300DAC00B /* ScaleOnChangeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleOnChangeModifier.swift; sourceTree = "<group>"; };
 		DD24738F2C464A5100FF925A /* Alladhina-font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alladhina-font.otf"; sourceTree = "<group>"; };
@@ -60,11 +67,14 @@
 		DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo_cubesApp.swift; sourceTree = "<group>"; };
 		DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD49BEEB2C3F2DF80071E9C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DD49BEED2C3F2DF80071E9C4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		DD49BEF02C3F2DF80071E9C4 /* Memo_cubes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memo_cubes.xcdatamodel; sourceTree = "<group>"; };
 		DD49BEF92C3F2E950071E9C4 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		DD49BEFB2C3F415B0071E9C4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		DD5F50DE2C80E45D004007AF /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		DD665B002C5D36DC001272CF /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		DD71BE682C82268D00A18154 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD71BE692C82268D00A18154 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD71BE6C2C82289400A18154 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
+		DD71BE6E2C82308600A18154 /* SetupUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupUserView.swift; sourceTree = "<group>"; };
 		DD82F1812C403513001EAB04 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		DD82F1842C404BD9001EAB04 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		DDA652F22C61A80500B659A9 /* Memo cubes Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Memo cubes Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,20 +164,21 @@
 		DD49BEE32C3F2DF70071E9C4 /* Memo cubes */ = {
 			isa = PBXGroup;
 			children = (
+				DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */,
+				DD71BE682C82268D00A18154 /* User+CoreDataClass.swift */,
+				DD71BE692C82268D00A18154 /* User+CoreDataProperties.swift */,
+				DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */,
 				DD42B6CF2C672FBF0073F062 /* Models */,
 				DDF7027C2C54CC1B00F8BF71 /* Services */,
 				DD244D532C4CB3FF00DAC00B /* ViewModifiers */,
 				DD2473982C464C8D00FF925A /* Extensions */,
-				DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */,
 				DD24738C2C46465300FF925A /* Fonts */,
 				DD82F1832C404BCA001EAB04 /* ViewModels */,
 				DD49BEF82C3F2E830071E9C4 /* Views */,
 				DD49BEF72C3F2E7A0071E9C4 /* Components */,
-				DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */,
 				DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */,
-				DD49BEED2C3F2DF80071E9C4 /* Persistence.swift */,
-				DD49BEEF2C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld */,
 				DD49BEEA2C3F2DF80071E9C4 /* Preview Content */,
+				DD5F50DD2C80E45D004007AF /* User.xcdatamodeld */,
 			);
 			path = "Memo cubes";
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 				DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */,
 				DD665B002C5D36DC001272CF /* CustomAlertView.swift */,
 				DDAC36FB2C72D636003B4900 /* PageCardView.swift */,
+				DD71BE6E2C82308600A18154 /* SetupUserView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -207,6 +219,7 @@
 			children = (
 				DD82F1842C404BD9001EAB04 /* GameViewModel.swift */,
 				DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */,
+				DD71BE6C2C82289400A18154 /* MainMenuViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -233,6 +246,8 @@
 			children = (
 				DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */,
 				DD150A6A2C555D0700F986EE /* PlayerService.swift */,
+				DD0CE5DF2C7E38B800B3D0F1 /* Uppercase.swift */,
+				DD0CE5E32C7E3E6500B3D0F1 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -345,17 +360,22 @@
 			files = (
 				DD42B6D12C672FD10073F062 /* CubeModel.swift in Sources */,
 				DDAC36FC2C72D636003B4900 /* PageCardView.swift in Sources */,
+				DD0CE5E02C7E38B800B3D0F1 /* Uppercase.swift in Sources */,
 				DD665B012C5D36DC001272CF /* CustomAlertView.swift in Sources */,
+				DD5F50DF2C80E45D004007AF /* User.xcdatamodeld in Sources */,
+				DD71BE6D2C82289400A18154 /* MainMenuViewModel.swift in Sources */,
 				DDB833942C69755C00F54930 /* TwoPlayersGameView.swift in Sources */,
+				DD0CE5E42C7E3E6500B3D0F1 /* CoreDataService.swift in Sources */,
+				DD71BE6A2C82268D00A18154 /* User+CoreDataClass.swift in Sources */,
+				DD71BE6B2C82268D00A18154 /* User+CoreDataProperties.swift in Sources */,
 				DD49BEFA2C3F2E950071E9C4 /* MainMenuView.swift in Sources */,
 				DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */,
-				DD49BEEE2C3F2DF80071E9C4 /* Persistence.swift in Sources */,
 				DD82F1822C403513001EAB04 /* Cube.swift in Sources */,
-				DD49BEF12C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld in Sources */,
 				DD150A6B2C555D0700F986EE /* PlayerService.swift in Sources */,
 				DDAC36F82C72D4AC003B4900 /* OnBoardingView.swift in Sources */,
 				DD244D552C4CB43300DAC00B /* ScaleOnChangeModifier.swift in Sources */,
 				DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */,
+				DD71BE6F2C82308600A18154 /* SetupUserView.swift in Sources */,
 				DDF7027E2C54CC2C00F8BF71 /* GameMemoService.swift in Sources */,
 				DDAC36FA2C72D5F8003B4900 /* OnBoardingPageModel.swift in Sources */,
 				DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */,
@@ -652,13 +672,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DD49BEEF2C3F2DF80071E9C4 /* Memo_cubes.xcdatamodeld */ = {
+		DD5F50DD2C80E45D004007AF /* User.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DD49BEF02C3F2DF80071E9C4 /* Memo_cubes.xcdatamodel */,
+				DD5F50DE2C80E45D004007AF /* User.xcdatamodel */,
 			);
-			currentVersion = DD49BEF02C3F2DF80071E9C4 /* Memo_cubes.xcdatamodel */;
-			path = Memo_cubes.xcdatamodeld;
+			currentVersion = DD5F50DE2C80E45D004007AF /* User.xcdatamodel */;
+			name = User.xcdatamodeld;
+			path = "/Users/pavel_andreev/Desktop/Portfolio/Memo cubes/Memo cubes/User.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

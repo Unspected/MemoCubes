@@ -1,25 +1,28 @@
-//
-//  Memo_cubesApp.swift
-//  Memo cubes
-//
-//  Created by Pavel Andreev on 7/10/24.
-//
-
 import SwiftUI
+
+
+enum DI {
+    static let dataService = CoreDataService.shared
+    static let mainViewModel = MainMenuViewModel(context: dataService)
+}
 
 @main
 struct Memo_cubesApp: App {
-    let persistenceController = PersistenceController.shared
+    
+    
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @StateObject var mainMenuViewModel = DI.mainViewModel
+    
 
     var body: some Scene {
+        
+        
         WindowGroup {
             if isOnboarding {
                 OnBoardingView(pages: OnboardingDataModel.models)
             } else {
-                //            ContentView()
-                //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                MainMenuView()
+                MainMenuView(viewModel: mainMenuViewModel)
+                    .environment(\.managedObjectContext, DI.dataService.viewContext)
             }
         }
     }

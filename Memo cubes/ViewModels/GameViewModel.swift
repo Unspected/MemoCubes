@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import CoreData
 
 actor TaskManager {
     
@@ -35,6 +36,7 @@ protocol OpponentServiceProtocol {
 @MainActor
 final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServiceProtocol {
     
+    
     private let taskManager = TaskManager()
     private let cubeImages: [String] = ["magic-carpet", "swords", "camel",
                                         "camel-shape", "cactus", "castle",
@@ -59,7 +61,6 @@ final class GameViewModel: ObservableObject, CubesServiceProtocol, OpponentServi
     @Published var touchesDisabled: Bool = false
     @Published var blockAllField: Bool = false
     
-    let playerName: String = "Pavel"
     let opponentName: String = "PC"
     private var stepsCount: Int = 0
     
