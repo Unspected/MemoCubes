@@ -41,17 +41,6 @@
                ReferencedContainer = "container:Memo cubes.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DDB07C152CCF42E7006B7BFB"
-               BuildableName = "Memo cubesUITests.xctest"
-               BlueprintName = "Memo cubesUITests"
-               ReferencedContainer = "container:Memo cubes.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

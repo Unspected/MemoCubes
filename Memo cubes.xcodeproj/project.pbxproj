@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,6 @@
 		DD2473942C464AA200FF925A /* Persian.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473932C464AA200FF925A /* Persian.otf */; };
 		DD2473962C464ABB00FF925A /* Ramadhankarim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */; };
 		DD24739A2C464C9D00FF925A /* CustomFontsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */; };
-		DD2F23F52CA1FBC300358D33 /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F23F42CA1FBC300358D33 /* UserSettingsView.swift */; };
 		DD42B6D12C672FD10073F062 /* CubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42B6D02C672FD10073F062 /* CubeModel.swift */; };
 		DD49BEE52C3F2DF70071E9C4 /* Memo_cubesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */; };
 		DD49BEE92C3F2DF80071E9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD49BEE82C3F2DF80071E9C4 /* Assets.xcassets */; };
@@ -50,13 +49,6 @@
 			remoteGlobalIDString = DD49BEE02C3F2DF70071E9C4;
 			remoteInfo = "Memo cubes";
 		};
-		DDB07C1C2CCF42E7006B7BFB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD49BED92C3F2DF70071E9C4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD49BEE02C3F2DF70071E9C4;
-			remoteInfo = "Memo cubes";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +62,6 @@
 		DD2473952C464ABB00FF925A /* Ramadhankarim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramadhankarim.ttf; sourceTree = "<group>"; };
 		DD2473972C464B5400FF925A /* Memo-cubes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Memo-cubes-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DD2473992C464C9D00FF925A /* CustomFontsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontsExtension.swift; sourceTree = "<group>"; };
-		DD2F23F42CA1FBC300358D33 /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
 		DD42B6D02C672FD10073F062 /* CubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeModel.swift; sourceTree = "<group>"; };
 		DD49BEE12C3F2DF70071E9C4 /* Memo cubes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memo cubes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD49BEE42C3F2DF70071E9C4 /* Memo_cubesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo_cubesApp.swift; sourceTree = "<group>"; };
@@ -92,16 +83,11 @@
 		DDAC36F92C72D5F8003B4900 /* OnBoardingPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageModel.swift; sourceTree = "<group>"; };
 		DDAC36FB2C72D636003B4900 /* PageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCardView.swift; sourceTree = "<group>"; };
 		DDB052AA2C687D8B002975D3 /* GameViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelMock.swift; sourceTree = "<group>"; };
-		DDB07C162CCF42E7006B7BFB /* Memo cubesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Memo cubesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovePointer.swift; sourceTree = "<group>"; };
 		DDB833932C69755C00F54930 /* TwoPlayersGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayersGameView.swift; sourceTree = "<group>"; };
 		DDF7027D2C54CC2C00F8BF71 /* GameMemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMemoService.swift; sourceTree = "<group>"; };
 		DDF7027F2C54D1AD00F8BF71 /* GameViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		DDB07C172CCF42E7006B7BFB /* Memo cubesUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Memo cubesUITests"; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DD49BEDE2C3F2DF70071E9C4 /* Frameworks */ = {
@@ -112,13 +98,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DDA652EF2C61A80500B659A9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDB07C132CCF42E7006B7BFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -169,7 +148,6 @@
 			children = (
 				DD49BEE32C3F2DF70071E9C4 /* Memo cubes */,
 				DDA652F32C61A80500B659A9 /* Memo cubes Tests */,
-				DDB07C172CCF42E7006B7BFB /* Memo cubesUITests */,
 				DD49BEE22C3F2DF70071E9C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -179,7 +157,6 @@
 			children = (
 				DD49BEE12C3F2DF70071E9C4 /* Memo cubes.app */,
 				DDA652F22C61A80500B659A9 /* Memo cubes Tests.xctest */,
-				DDB07C162CCF42E7006B7BFB /* Memo cubesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +198,7 @@
 				DDB2C4392C52C2C9004DFC19 /* MovePointer.swift */,
 				DD665B002C5D36DC001272CF /* CustomAlertView.swift */,
 				DDAC36FB2C72D636003B4900 /* PageCardView.swift */,
+				DD71BE6E2C82308600A18154 /* SetupUserView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -232,8 +210,6 @@
 				DD49BEFB2C3F415B0071E9C4 /* GameView.swift */,
 				DDB833932C69755C00F54930 /* TwoPlayersGameView.swift */,
 				DDAC36F72C72D4AC003B4900 /* OnBoardingView.swift */,
-				DD71BE6E2C82308600A18154 /* SetupUserView.swift */,
-				DD2F23F42CA1FBC300358D33 /* UserSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,29 +290,6 @@
 			productReference = DDA652F22C61A80500B659A9 /* Memo cubes Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DDB07C152CCF42E7006B7BFB /* Memo cubesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDB07C202CCF42E7006B7BFB /* Build configuration list for PBXNativeTarget "Memo cubesUITests" */;
-			buildPhases = (
-				DDB07C122CCF42E7006B7BFB /* Sources */,
-				DDB07C132CCF42E7006B7BFB /* Frameworks */,
-				DDB07C142CCF42E7006B7BFB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DDB07C1D2CCF42E7006B7BFB /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				DDB07C172CCF42E7006B7BFB /* Memo cubesUITests */,
-			);
-			name = "Memo cubesUITests";
-			packageProductDependencies = (
-			);
-			productName = "Memo cubesUITests";
-			productReference = DDB07C162CCF42E7006B7BFB /* Memo cubesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -344,7 +297,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					DD49BEE02C3F2DF70071E9C4 = {
@@ -352,10 +305,6 @@
 					};
 					DDA652F12C61A80500B659A9 = {
 						CreatedOnToolsVersion = 15.4;
-						TestTargetID = DD49BEE02C3F2DF70071E9C4;
-					};
-					DDB07C152CCF42E7006B7BFB = {
-						CreatedOnToolsVersion = 16.0;
 						TestTargetID = DD49BEE02C3F2DF70071E9C4;
 					};
 				};
@@ -377,7 +326,6 @@
 			targets = (
 				DD49BEE02C3F2DF70071E9C4 /* Memo cubes */,
 				DDA652F12C61A80500B659A9 /* Memo cubes Tests */,
-				DDB07C152CCF42E7006B7BFB /* Memo cubesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -403,13 +351,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDB07C142CCF42E7006B7BFB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -427,7 +368,6 @@
 				DD0CE5E42C7E3E6500B3D0F1 /* CoreDataService.swift in Sources */,
 				DD71BE6A2C82268D00A18154 /* User+CoreDataClass.swift in Sources */,
 				DD71BE6B2C82268D00A18154 /* User+CoreDataProperties.swift in Sources */,
-				DD2F23F52CA1FBC300358D33 /* UserSettingsView.swift in Sources */,
 				DD49BEFA2C3F2E950071E9C4 /* MainMenuView.swift in Sources */,
 				DDF702802C54D1AD00F8BF71 /* GameViewModel2.swift in Sources */,
 				DD82F1822C403513001EAB04 /* Cube.swift in Sources */,
@@ -454,13 +394,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDB07C122CCF42E7006B7BFB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -468,11 +401,6 @@
 			isa = PBXTargetDependency;
 			target = DD49BEE02C3F2DF70071E9C4 /* Memo cubes */;
 			targetProxy = DDA652F62C61A80500B659A9 /* PBXContainerItemProxy */;
-		};
-		DDB07C1D2CCF42E7006B7BFB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DD49BEE02C3F2DF70071E9C4 /* Memo cubes */;
-			targetProxy = DDB07C1C2CCF42E7006B7BFB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -711,40 +639,6 @@
 			};
 			name = Release;
 		};
-		DDB07C1E2CCF42E7006B7BFB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "PavelAndreev.Memo-cubesUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Memo cubes";
-			};
-			name = Debug;
-		};
-		DDB07C1F2CCF42E7006B7BFB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "PavelAndreev.Memo-cubesUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Memo cubes";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -771,15 +665,6 @@
 			buildConfigurations = (
 				DDA652F82C61A80500B659A9 /* Debug */,
 				DDA652F92C61A80500B659A9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DDB07C202CCF42E7006B7BFB /* Build configuration list for PBXNativeTarget "Memo cubesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DDB07C1E2CCF42E7006B7BFB /* Debug */,
-				DDB07C1F2CCF42E7006B7BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
