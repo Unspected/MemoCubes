@@ -12,6 +12,7 @@ actor TaskManager {
     }
 }
 // add comment
+// add comment2
 
 @MainActor
 protocol CubesServiceProtocol {
